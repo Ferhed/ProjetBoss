@@ -35,6 +35,7 @@ public class mapGenerator : MonoBehaviour {
         papaWall.parent = parent.transform;
         GameObject tileParent = new GameObject();
         tileParent.name = "tileParent";
+        tileParent.tag = "parentTile";
         Transform papaTile = tileParent.transform;
         papaTile.parent = parent.transform;
 
@@ -56,6 +57,11 @@ public class mapGenerator : MonoBehaviour {
                 {
                     go.transform.parent = papaTile;
                     go.name = "Tile " + i + "-" + j;
+                    go.GetComponent<CubeScript>().isFirst = false;
+                    if (i == 1 || j == 1 || i == largeur - 2 || j == longueur - 2)
+                    {
+                        go.GetComponent<CubeScript>().isFirst = true; 
+                    }
                     tiles[i, j] = go;
                 }
             }
