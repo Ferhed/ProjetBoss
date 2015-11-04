@@ -14,12 +14,11 @@ public class BombSpawn : MonoBehaviour {
     float zRand;
     int Rand;
     int maxRand;
-	// Use this for initialization
+
 	void Start () {
         timer = maxTimer;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (!parentTile){parentTile = GameObject.FindGameObjectsWithTag("parentTile")[0];}
         timer--;

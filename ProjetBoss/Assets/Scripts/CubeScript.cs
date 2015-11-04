@@ -6,8 +6,11 @@ public class CubeScript : MonoBehaviour {
     public bool isAttach;
     public bool isFirst;
 
+    public float rBomb;
+
     public string referent;
 
+    bool canBeKill = false;
     bool goToHit = false;
     bool hit = false;
     float xScale;
@@ -15,34 +18,42 @@ public class CubeScript : MonoBehaviour {
     float r;
     float g;
     float b;
+    Color firstColor;
     int maxTimerCheck;
     int timerCheck;
     int timerHit;
+    int timerCheckIn;
+    int maxTimerCheckIn;
 
-	// Use this for initialization
 	void Start () {
         referent = "none";
+        maxTimerCheckIn = 10;
+        timerCheckIn = maxTimerCheckIn;
         maxTimerCheck = 50;
-        timerHit = 50;
+        timerHit = 0;//50
         timerCheck = -1;
         xScale = this.gameObject.transform.localScale.x;
         zScale = this.gameObject.transform.localScale.z;
-        r = Random.Range(0f, 1f);
-        g = Random.Range(0f, 1f);
-        b = Random.Range(0f, 1f);
-        this.gameObject.GetComponent<Renderer>().material.color = new Color(r, g, b);
+        firstColor = pickColor(r,g,b,true);
         //if (isFirst) { isAttach = true; }
 	}
 
-	// Update is called once per frame
 	void Update () {
+        timerCheckIn--;
+        if (canBeKill)
+        {
+            timerCheckIn = maxTimerCheckIn;
+            this.gameObject.GetComponent<Renderer>().material.color = new Color(rBomb, 0, 0);
+            canBeKill = false;
+        }
+        if (timerCheckIn < 0)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = firstColor;
+        }
         if (goToHit) 
         {
             timerHit--;
-            r = Random.Range(0f, 1f);
-            g = Random.Range(0f, 1f);
-            b = Random.Range(0f, 1f);
-            this.gameObject.GetComponent<Renderer>().material.color = new Color(r, g, b);
+            this.gameObject.GetComponent<Renderer>().material.color = pickColor(r, g, b, true);
         }
         if (timerHit < 0) { hit = true; }
         timerCheck--;
@@ -72,6 +83,27 @@ public class CubeScript : MonoBehaviour {
         {
             goToHit = true;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "zone") { canBeKill = true; }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "zone") { canBeKill = true; }
+    }
+
+    Color pickColor(float r,float g,float b, bool toRand) 
+    {
+        if (toRand)
+        {
+            r = Random.Range(0f, 1f);
+            g = Random.Range(0f, 1f);
+            b = Random.Range(0f, 1f);   
+        }
+        return new Color(r, g, b);
     }
 
     void search(float x, float z) 
