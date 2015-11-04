@@ -1,14 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:ProjetBoss/Assets/Ressources/Prefabs.meta
-guid: 6cbb78866ad84c64b8e89e0736242083
+guid: 4e2ab8cedc13580448e5b6b7ac2a807f
 folderAsset: yes
-timeCreated: 1446460721
-=======
-guid: 2102e5dbd14cb0741a885ca08264face
-folderAsset: yes
-timeCreated: 1446469642
->>>>>>> matthieu:ProjetBoss/Assets/Editor.meta
-licenseType: Pro
 DefaultImporter:
   userData: 
   assetBundleName: 

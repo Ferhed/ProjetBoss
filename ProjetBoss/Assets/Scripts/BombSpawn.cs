@@ -33,7 +33,7 @@ public class BombSpawn : MonoBehaviour {
                 xRand = tabTile[Rand].transform.position.x;
                 zRand = tabTile[Rand].transform.position.z;
                 timer = maxTimer;
-                Instantiate(bomb, new Vector3(xRand, 0, zRand), Quaternion.identity);
+                Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
             }
         }
 	}

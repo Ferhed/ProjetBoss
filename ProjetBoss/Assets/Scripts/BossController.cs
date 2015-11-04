@@ -59,9 +59,12 @@ public class BossController : MonoBehaviour {
             SwitchState(States.Phase2);
         }
 
-        float step = speed * Time.deltaTime;
-        Vector3 positionPlayer = player.transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, positionPlayer, step);
+		Vector3 positionPlayer = player.transform.position;
+		if (Vector3.Distance (transform.position, new Vector3 (positionPlayer.x, transform.position.y, positionPlayer.z)) > manager.stopDistance) {
+			float step = speed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position,new Vector3( positionPlayer.x,transform.position.y,positionPlayer.z), step);
+		}
+		transform.LookAt (new Vector3( positionPlayer.x,transform.position.y,positionPlayer.z));
     }
 
     void Phase2Behaviour()

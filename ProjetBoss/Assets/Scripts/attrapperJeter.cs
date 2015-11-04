@@ -35,20 +35,19 @@ public class attrapperJeter : MonoBehaviour {
                     item.GetComponent<Rigidbody>().isKinematic = true;
                     item.localPosition = new Vector3(-0.1f, -0.5f, 0.8f);
                     itemLink = item;
-                    handFull = true;
                 }
             }
         }
 
 
-        if(Input.GetButtonDown("X_button_1") && handFull == true)
+        if(Input.GetButtonDown("X_button_1") && itemLink != null)
         {
             Rigidbody rb = itemLink.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             itemLink.parent = null;
             rb.AddForce(camera.transform.forward * puissance);
             itemLink = null;
-            handFull = false;
+
         }
         else if(Input.GetButtonDown("X_button_1") && handFull == false)
         {

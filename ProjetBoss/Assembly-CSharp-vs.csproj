@@ -46,9 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\BombScript.cs" />
+     <Compile Include="Assets\Scripts\BombSpawn.cs" />
      <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossManager.cs" />
+     <Compile Include="Assets\Scripts\CubeScript.cs" />
+     <Compile Include="Assets\Scripts\ExplScript.cs" />
+     <Compile Include="Assets\Scripts\StartExpl.cs" />
      <Compile Include="Assets\Scripts\attrapperJeter.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\mapGenerator.cs" />
@@ -56,20 +60,10 @@
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-=======
-     <Compile Include="Assets\Scripts\BombScript.cs" />
-     <Compile Include="Assets\Scripts\BombSpawn.cs" />
-     <Compile Include="Assets\Scripts\CubeScript.cs" />
-     <Compile Include="Assets\Scripts\ExplScript.cs" />
-     <Compile Include="Assets\Scripts\StartExpl.cs" />
-     <Compile Include="Assets\Scripts\mapGenerator.cs" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
->>>>>>> matthieu
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

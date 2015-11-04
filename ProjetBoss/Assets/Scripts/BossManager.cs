@@ -12,6 +12,8 @@ public class BossManager : MonoBehaviour {
     public float delay = 5f;
     float lastAct = 0;
 
+	public float stopDistance = 2f;
+
 	// Use this for initialization
 	void Start () {
 
