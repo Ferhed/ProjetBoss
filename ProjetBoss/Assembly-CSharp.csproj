@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BossManager.cs" />
      <Compile Include="Assets\Scripts\CubeScript.cs" />
      <Compile Include="Assets\Scripts\ExplScript.cs" />
+     <Compile Include="Assets\Scripts\PorteAscenseur.cs" />
      <Compile Include="Assets\Scripts\StartExpl.cs" />
      <Compile Include="Assets\Scripts\attrapperJeter.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
