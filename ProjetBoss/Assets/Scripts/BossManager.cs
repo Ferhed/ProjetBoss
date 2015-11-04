@@ -4,15 +4,18 @@ using System.Collections;
 public class BossManager : MonoBehaviour {
 
     public GameObject bossPrefab;
+    public StartExpl startExpl;
 
     GameObject[] bosses = new GameObject[2];
 
-    [HideInInspector]public BossController.States currentState = BossController.States.Phase1;
+    [HideInInspector]public BossController.States currentState = BossController.States.Idle;
 
     public float delay = 5f;
     float lastAct = 0;
 
 	public float stopDistance = 2f;
+
+    GameObject currentPhase1;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,8 @@ public class BossManager : MonoBehaviour {
         bosses[0] = boss1;
         bosses[1] = boss2;
 
+        currentPhase1 = bosses[0];
+
         BossBegining();
     }
 
@@ -32,7 +37,9 @@ public class BossManager : MonoBehaviour {
     {
         bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
         bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Idle);
+        currentState = BossController.States.Phase1;
     }
+
 
     void Update()
     {
@@ -42,20 +49,47 @@ public class BossManager : MonoBehaviour {
                 if (Time.realtimeSinceStartup - lastAct >= delay)
                 {
                     lastAct = Time.realtimeSinceStartup;
-
-                    if (bosses[0].GetComponent<BossController>().GetState() == BossController.States.Phase1)
+                    
+                    currentPhase1.GetComponent<BossController>().SwitchState(BossController.States.Phase1);
+                    
+                }else if(Time.realtimeSinceStartup - lastAct >= delay - 3)
+                {
+                    if (bosses[0].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[0].GetComponent<BossController>().hasCharged == false)
                     {
-                        bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
-                        bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Idle);
+                        bosses[0].GetComponent<BossController>().Charge();
+                        bosses[0].GetComponent<BossController>().hasCharged = true;
+                        currentPhase1 = bosses[1];
+                        currentPhase1.GetComponent<BossController>().hasCharged = false;
                     }
-                    else
+                    else if (bosses[1].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[1].GetComponent<BossController>().hasCharged == false)
                     {
-                        bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
-                        bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Idle);
+                        bosses[1].GetComponent<BossController>().Charge();
+                        bosses[1].GetComponent<BossController>().hasCharged = true;
+                        currentPhase1 = bosses[0];
+                        currentPhase1.GetComponent<BossController>().hasCharged = false;
                     }
                 }
                 break;
         }  
     }
+
+    public void EndPhase1(GameObject deadBoss)
+    {
+        if(deadBoss == bosses[0])
+        {
+            bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Phase2);
+        }
+        else
+        {
+            bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase2);
+        }
+        Destroy(deadBoss);
+    }
 	
+
+    public void EndPhase2()
+    {
+        startExpl.StartPhase3();
+    }
+
 }

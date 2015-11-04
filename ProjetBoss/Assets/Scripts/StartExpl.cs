@@ -40,7 +40,7 @@ public class StartExpl : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter(Collider collision)
+    /*void OnTriggerEnter(Collider collision)
     {
         //Debug.Log("hit");
         if (collision.gameObject.tag == "Player")
@@ -48,5 +48,11 @@ public class StartExpl : MonoBehaviour {
             start = true;
             script.startspawn = true;
         }
+    }*/
+
+    public void StartPhase3()
+    {
+        start = true;
+        script.startspawn = true;
     }
 }
