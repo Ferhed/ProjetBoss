@@ -13,14 +13,12 @@ public class mapGenerator : MonoBehaviour {
 
     Vector3 tailleTile;
 
-	// Use this for initialization
 	void Start () {
         tailleTile = tile.transform.localScale;
         tiles = new GameObject[largeur,longueur];
         generator();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

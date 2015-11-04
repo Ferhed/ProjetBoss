@@ -4,14 +4,15 @@ using System.Collections;
 public class BombScript : MonoBehaviour {
 
     public GameObject expl;
+    public int timerMax;
     public int timer;
 
-	// Use this for initialization
+
 	void Start () {
-	
+        timer = timerMax;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
         timer--;
         if (timer<0)
@@ -20,4 +21,15 @@ public class BombScript : MonoBehaviour {
             Destroy(this.gameObject);
         }
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "boss"){timer = 0;}
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "boss") {timer = 0;}
+    }
+
 }
