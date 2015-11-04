@@ -87,12 +87,12 @@ public class CubeScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "zone") { canBeKill = true; }
+        if (other.tag == "Zone") { canBeKill = true; }
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "zone") { canBeKill = true; }
+        if (other.tag == "Zone") { canBeKill = true; }
     }
 
     Color pickColor(float r,float g,float b, bool toRand) 

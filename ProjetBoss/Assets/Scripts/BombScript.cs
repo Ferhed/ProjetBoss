@@ -24,12 +24,12 @@ public class BombScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "boss"){timer = 0;}
+        if (collision.gameObject.tag == "Boss"){timer = 0;}
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "boss") {timer = 0;}
+        if (other.gameObject.tag == "Boss") {timer = 0;}
     }
 
 }

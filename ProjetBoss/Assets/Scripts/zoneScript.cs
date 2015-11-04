@@ -24,7 +24,13 @@ public class zoneScript : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Ground") { other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax; }
+        if (other)
+        {
+            if (other.tag == "Ground")
+            {
+                other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax;
+            }
+        }
     }
 
 }
