@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ef7c03116e85fcd43ba1836eae0707d9
 folderAsset: yes
 timeCreated: 1446460883
+=======
+guid: 3ac10e2d9e57a364b8c285baa387b87d
+folderAsset: yes
+timeCreated: 1446469642
+>>>>>>> matthieu
 licenseType: Pro
 DefaultImporter:
   userData: 
