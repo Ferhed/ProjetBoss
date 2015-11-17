@@ -30,10 +30,10 @@ public class BossManager : MonoBehaviour {
 
         currentPhase1 = bosses[0];
 
-        BossBegining();
+        //BossBegining();
     }
 
-    void BossBegining()
+    public void BossBegining()
     {
         bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
         bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Idle);
@@ -87,7 +87,12 @@ public class BossManager : MonoBehaviour {
     }
 	
 
-    public void EndPhase2()
+    public void StartPhase2()
+    {
+        startExpl.StartPhase2();
+    }
+
+    public void StartPhase3()
     {
         startExpl.StartPhase3();
     }

@@ -159,10 +159,11 @@ public class BossController : MonoBehaviour {
                 ChangeColor(Color.white);
                 break;
             case States.Phase2:
+                manager.StartPhase2();
                 ChangeColor(Color.yellow);
                 break;
             case States.Phase3:
-                manager.EndPhase2();
+                manager.StartPhase3();
                 ChangeColor(Color.red);
                 break;
         }
@@ -184,7 +185,18 @@ public class BossController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Projectile" && Time.time - invincibilityStart > invincibilityDelay)
+
+        bool hurt = false;
+
+        if(currentState == States.Idle || currentState == States.Phase1)
+        {
+            hurt = collision.gameObject.tag == "Projectile";
+        }
+        else
+        {
+            hurt = collision.gameObject.tag == "Bomb";
+        }
+        if (hurt && Time.time - invincibilityStart > invincibilityDelay)
         {
             life = 0;
             invincibilityStart = Time.time;

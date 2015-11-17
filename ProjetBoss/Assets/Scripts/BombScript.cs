@@ -7,6 +7,8 @@ public class BombScript : MonoBehaviour {
     public int timerMax;
     public int timer;
 
+    public bool littleBomb = false;
+
 
 	void Start () {
         timer = timerMax;
@@ -17,7 +19,10 @@ public class BombScript : MonoBehaviour {
         timer--;
         if (timer<0)
         {
-            Instantiate(expl,this.gameObject.transform.position,Quaternion.identity);
+            if (!littleBomb)
+            {
+                Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
 	}

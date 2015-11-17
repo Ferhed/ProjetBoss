@@ -9,11 +9,13 @@ public class PorteAscenseur : MonoBehaviour {
 	private bool caSouvre = false;
     private float ratio = 1f;
 
-	// Use this for initialization
-	void Start () {
-		currentTime = tempsOuverturePorte;
+    BossManager manager;
 
-	}
+    // Use this for initialization
+    void Start () {
+		currentTime = tempsOuverturePorte;
+        manager = GameObject.Find("BossManager").GetComponent<BossManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,6 +39,7 @@ public class PorteAscenseur : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
+            manager.BossBegining();
             Destroy(gameObject);
         }
        
