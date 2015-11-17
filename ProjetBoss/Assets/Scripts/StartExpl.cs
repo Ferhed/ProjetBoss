@@ -37,10 +37,15 @@ public class StartExpl : MonoBehaviour {
         }
     }*/
 
+    public void StartPhase2()
+    {
+        script.startspawn = true;
+    }
+
     public void StartPhase3()
     {
+        script.phase3 = true;
         start = true;
-        script.startspawn = true;
     }
 
     void fun(string tag) 

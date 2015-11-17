@@ -4,6 +4,10 @@ using System.Collections;
 public class BombSpawn : MonoBehaviour {
 
     public GameObject bomb;
+    public GameObject littleBomb;
+
+    [HideInInspector]public bool phase3 = false;
+
     public int maxTimer;
     public GameObject parentTile;
     public bool startspawn = false;
@@ -32,7 +36,14 @@ public class BombSpawn : MonoBehaviour {
                 xRand = tabTile[Rand].transform.position.x;
                 zRand = tabTile[Rand].transform.position.z;
                 timer = maxTimer;
-                Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
+                if (phase3)
+                {
+                    Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(littleBomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
+                }
             }
         }
 	}

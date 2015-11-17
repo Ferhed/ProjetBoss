@@ -29,7 +29,7 @@ public class attrapperJeter : MonoBehaviour {
 
                 Transform item = testItem[0].transform;
                 testItem = null;
-                if(item.tag == "Projectile")
+                if(item.tag == "Projectile" || item.tag == "Bomb")
                 {
                     item.parent = transform;
                     item.GetComponent<Rigidbody>().isKinematic = true;
