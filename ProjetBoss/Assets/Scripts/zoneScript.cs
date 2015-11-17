@@ -19,14 +19,22 @@ public class zoneScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+<<<<<<< HEAD
         if (other)
         {
             if (other.tag == "Ground") { other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax; }
         }
+=======
+		if (other.tag == "Ground" && other.gameObject.GetComponent<CubeScript>()) 
+		{ 
+			other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax; 
+		}
+>>>>>>> 94f43a9cc29698c88605dbc957c691e51f40548e
     }
 
     void OnTriggerStay(Collider other)
     {
+<<<<<<< HEAD
         if (other)
         {
             if (other.tag == "Ground")
@@ -34,6 +42,12 @@ public class zoneScript : MonoBehaviour {
                 other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax;
             }
         }
+=======
+		if (other.tag == "Ground" && other.gameObject.GetComponent<CubeScript>()) 
+		{
+			other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax; 
+		}
+>>>>>>> 94f43a9cc29698c88605dbc957c691e51f40548e
     }
 
 }
