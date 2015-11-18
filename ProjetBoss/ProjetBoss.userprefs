@@ -1,28 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\ProjetTatiana\projetTatiana\Assets\Scripts\targetAndShoot.cs">
-    <Files>
-      <File FileName="..\..\ProjetTatiana\projetTatiana\Assets\Scripts\targetAndShoot.cs" Line="6" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BombSpawn.cs">
-    <Files>
-      <File FileName="Assets\Scripts\mapGenerator.cs" Line="97" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Utility\FPSCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BombSpawn.cs" Line="25" Column="71" />
-      <File FileName="Assets\Scripts\BombScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\attrapperJeter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CubeScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\zoneScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WallScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\papaScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StartExpl.cs" Line="1" Column="1" />
->>>>>>> 94f43a9cc29698c88605dbc957c691e51f40548e
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
