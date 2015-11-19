@@ -167,7 +167,7 @@ public class BossController : MonoBehaviour {
 
     public void SwitchState(States s)
     {
-        Debug.Log("state  " + s);
+        //Debug.Log("state  " + s);
 
         currentState = s;
         if(s!= States.Idle && s != manager.currentState)
