@@ -3,8 +3,6 @@ using System.Collections;
 
 public class WallScript : MonoBehaviour {
 
-	public float Ymax = -2000f;
-
 	bool isColored;
 	bool oldIsColored;
 	Color firstColor;
@@ -21,7 +19,6 @@ public class WallScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		isColored = MM.GetComponent<mapGenerator>().isColored;
-		if(this.gameObject.transform.position.y < Ymax){Destroy(this.gameObject);}
 		if (oldIsColored != isColored)
 		{
 			oldIsColored = isColored;
@@ -36,6 +33,16 @@ public class WallScript : MonoBehaviour {
 		if (change){firstColor = new Color (r,g,b);}
 		else{firstColor = Color.white;}
 		this.gameObject.GetComponent<Renderer> ().material.color = firstColor;
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "KZ"){Destroy(this.gameObject);}
+	}
+	
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "KZ") {Destroy(this.gameObject);}
 	}
 
 }

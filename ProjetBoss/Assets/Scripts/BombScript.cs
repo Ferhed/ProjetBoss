@@ -29,7 +29,8 @@ public class BombScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (this.gameObject.transform.position != endPos && !isActivated)
+		float test = Vector3.Distance(this.gameObject.transform.position, endPos);
+		if (test > 0.5f && !isActivated)
 		{
 			transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
 		}
