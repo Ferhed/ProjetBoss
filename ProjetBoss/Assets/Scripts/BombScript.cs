@@ -7,34 +7,56 @@ public class BombScript : MonoBehaviour {
     public int timerMax;
     public int timer;
 
-    public bool littleBomb = false;
+	float speed = 0.1f;
 
+	public bool littleBomb = false;
+
+	public Vector3 startPos = new Vector3(12.5f,7f,12.5f);
+	public Vector3 endPos;
+
+	public bool isActivated = false;
 
 	void Start () {
+		endPos = this.gameObject.transform.position;
+		this.gameObject.transform.position = startPos;
         timer = timerMax;
 	}
 	
+	public void hasCatch () 
+	{
+		isActivated = true;
+		endPos = this.gameObject.transform.localPosition;
+	}
 
 	void Update () {
-        timer--;
-        if (timer<0)
-        {
-            if (!littleBomb)
-            {
-                Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
-            }
-            Destroy(this.gameObject);
-        }
+		if (this.gameObject.transform.position != endPos && !isActivated)
+		{
+			transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
+		}
+		else{isActivated = true;}
+
+		if (isActivated) 
+		{
+			timer--;
+			if (timer<0)
+			{
+				if (!littleBomb)
+				{
+					Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
+				}
+				Destroy(this.gameObject);
+			}
+		}
 	}
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Boss"){timer = 0;}
+        if (collision.gameObject.tag == "Boss" && isActivated){timer = 0;}
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boss") {timer = 0;}
+        if (other.gameObject.tag == "Boss" && isActivated) {timer = 0;}
     }
 
 }

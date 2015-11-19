@@ -127,7 +127,7 @@ public class BossController : MonoBehaviour {
 
         if(transform.position.x != mapCenter.x && transform.position.z != mapCenter.z)
         {
-            Debug.Log(mapCenter.x+" "+ mapCenter.z);
+            //Debug.Log(mapCenter.x+" "+ mapCenter.z);
             float step = speed * Time.deltaTime;
             mapCenter.y = transform.position.y;
             transform.position = Vector3.MoveTowards(transform.position, mapCenter, step);
@@ -194,7 +194,7 @@ public class BossController : MonoBehaviour {
         }
         else
         {
-            hurt = collision.gameObject.tag == "Bomb";
+			hurt = collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated;
         }
         if (hurt && Time.time - invincibilityStart > invincibilityDelay)
         {

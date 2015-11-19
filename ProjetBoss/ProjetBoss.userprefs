@@ -1,6 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WallScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\attrapperJeter.cs" Line="51" Column="14" />
+      <File FileName="Assets\Scripts\BombSpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BombScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BossController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\cameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WallScript.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
