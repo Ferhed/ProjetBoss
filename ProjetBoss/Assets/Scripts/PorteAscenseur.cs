@@ -23,7 +23,7 @@ public class PorteAscenseur : MonoBehaviour {
         {
             currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
             ratio = currentTime / tempsOuverturePorte;
-            Debug.Log(ratio);
+            //Debug.Log(ratio);
 
             porte.transform.localScale = new Vector3(1,1,ratio);
             porte.transform.localPosition = new Vector3(0, 0, (ratio / 2)-0.5f);

@@ -24,9 +24,16 @@ public class BombSpawn : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (!parentTile){parentTile = GameObject.FindGameObjectsWithTag("parentTile")[0];}
+        if (!parentTile)
+		{
+			int count = GameObject.FindGameObjectsWithTag("parentTile").Length;
+			if (count > 0)
+			{
+				parentTile = GameObject.FindGameObjectsWithTag("parentTile")[0];
+			}
+		}
         timer--;
-        if (timer < 0 && startspawn) 
+        if (timer < 0 && startspawn && parentTile) 
         {
             maxRand = parentTile.transform.childCount;
             if (maxRand > 0)

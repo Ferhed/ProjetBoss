@@ -10,14 +10,17 @@ public class CubeScript : MonoBehaviour {
 
     public string referent;
 
+	GameObject MM;
+	bool isColored;
+	bool oldIsColored;
     bool canBeKill = false;
     bool goToHit = false;
     bool hit = false;
     float xScale;
     float zScale;
-    float r;
-    float g;
-    float b;
+    float r = 0;
+    float g = 0;
+    float b = 0;
     Color firstColor;
     int maxTimerCheck;
     int timerCheck;
@@ -26,6 +29,9 @@ public class CubeScript : MonoBehaviour {
     int maxTimerCheckIn;
 
 	void Start () {
+		MM = GameObject.Find ("MapManager");
+		isColored = MM.GetComponent<mapGenerator>().isColored;
+		oldIsColored = isColored;
         referent = "none";
         maxTimerCheckIn = 10;
         timerCheckIn = maxTimerCheckIn;
@@ -34,12 +40,20 @@ public class CubeScript : MonoBehaviour {
         timerCheck = -1;
         xScale = this.gameObject.transform.localScale.x;
         zScale = this.gameObject.transform.localScale.z;
-        firstColor = pickColor(r,g,b,true);
+		if (isColored) {firstColor = pickColor(r,g,b,true);}
+		else{firstColor = Color.white;}
         //if (isFirst) { isAttach = true; }
 	}
 
 	void Update () {
+		isColored = MM.GetComponent<mapGenerator>().isColored;
         timerCheckIn--;
+		if (oldIsColored != isColored)
+		{
+			oldIsColored = isColored;
+			if (isColored){firstColor = pickColor(r,g,b,true);}
+			else{firstColor = Color.white;}
+		}
         if (canBeKill)
         {
             timerCheckIn = maxTimerCheckIn;
@@ -79,10 +93,14 @@ public class CubeScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Explosion" && this.gameObject.tag == "Ground") 
-        {
-            goToHit = true;
-        }
+		GameObject test = collision.gameObject;
+		if (test)
+		{
+			if (collision.gameObject.tag == "Explosion" && this.gameObject.tag == "Ground") 
+			{
+				goToHit = true;
+			}
+		}
     }
 
     void OnTriggerEnter(Collider other)
