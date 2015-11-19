@@ -53,11 +53,13 @@ public class BombScript : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Boss" && isActivated){timer = 0;}
+		if (collision.gameObject.tag == "KZ"){Destroy(this.gameObject);}
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Boss" && isActivated) {timer = 0;}
+		if (other.gameObject.tag == "KZ"){Destroy(this.gameObject);}
     }
 
 }
