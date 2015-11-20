@@ -162,8 +162,9 @@ public class BossController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        
+        transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
-
 
     public void SwitchState(States s)
     {
@@ -190,6 +191,7 @@ public class BossController : MonoBehaviour {
             case States.Phase3:
                 manager.StartPhase3();
                 ChangeColor(Color.red);
+                transform.Find("Laser").gameObject.SetActive(true);
                 break;
         }
     }
