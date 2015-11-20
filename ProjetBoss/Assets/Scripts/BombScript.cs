@@ -7,6 +7,7 @@ public class BombScript : MonoBehaviour {
     public int timerMax;
     public int timer;
 
+	float limitDeath = 1000f;
 	float speed = 0.1f;
 	GameObject boss;
 
@@ -31,6 +32,8 @@ public class BombScript : MonoBehaviour {
 	}
 
 	void Update () {
+		limitDeath--;
+		if (limitDeath<0){Destroy(this.gameObject);}
 		float test = Vector3.Distance(this.gameObject.transform.position, endPos);
 		if (test > 0.5f && !isActivated)
 		{
