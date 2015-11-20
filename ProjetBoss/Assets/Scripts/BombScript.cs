@@ -8,6 +8,7 @@ public class BombScript : MonoBehaviour {
     public int timer;
 
 	float speed = 0.1f;
+	GameObject boss;
 
 	public bool littleBomb = false;
 
@@ -17,6 +18,7 @@ public class BombScript : MonoBehaviour {
 	public bool isActivated = false;
 
 	void Start () {
+		boss = GameObject.FindGameObjectWithTag ("Boss");
 		endPos = this.gameObject.transform.position;
 		this.gameObject.transform.position = startPos;
         timer = timerMax;
@@ -38,6 +40,7 @@ public class BombScript : MonoBehaviour {
 
 		if (isActivated) 
 		{
+			if(boss){Physics.IgnoreCollision(boss.GetComponent<Collider>(), this.gameObject.GetComponent<Collider>(), false);}
 			timer--;
 			if (timer<0)
 			{
@@ -47,6 +50,10 @@ public class BombScript : MonoBehaviour {
 				}
 				Destroy(this.gameObject);
 			}
+		}
+		else
+		{
+			if(boss){Physics.IgnoreCollision(boss.GetComponent<Collider>(), this.gameObject.GetComponent<Collider>(), true);}
 		}
 	}
 
