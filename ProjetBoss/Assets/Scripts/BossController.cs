@@ -120,6 +120,10 @@ public class BossController : MonoBehaviour {
         {
             SwitchState(States.Idle);
         }
+        else
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
 
     IEnumerator ReturnCenter()
@@ -141,10 +145,8 @@ public class BossController : MonoBehaviour {
 
         charging = false;
 
-        if (!otherBossKilled)
-        {
-            SwitchState(States.Idle);
-        }
+        setLaser();
+
     }
 
     void Phase2Behaviour()
@@ -154,6 +156,8 @@ public class BossController : MonoBehaviour {
             life = 100;
             SwitchState(States.Phase3);
         }
+
+        transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
     void Phase3Behaviour()
@@ -190,9 +194,20 @@ public class BossController : MonoBehaviour {
                 break;
             case States.Phase3:
                 manager.StartPhase3();
+                setLaser();
                 ChangeColor(Color.red);
-                transform.Find("Laser").gameObject.SetActive(true);
                 break;
+        }
+    }
+
+    void setLaser()
+    {
+        transform.Find("Laser").gameObject.SetActive(true);
+
+        if (currentState == States.Phase3)
+        {
+            Debug.Log("laser");
+            transform.Find("LaserRear").gameObject.SetActive(true);
         }
     }
 
