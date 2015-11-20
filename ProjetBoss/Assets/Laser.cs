@@ -7,7 +7,7 @@ public class Laser : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            Debug.Log("ok");
+            //Debug.Log("ok");
         }
     }
 }
