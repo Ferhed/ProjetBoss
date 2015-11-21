@@ -10,6 +10,13 @@ public class BombScript : MonoBehaviour {
 	float limitDeath = 1000f;
 	float speed = 0.1f;
 	GameObject boss;
+	float distance = 0f;
+
+	// start modif
+	float height = 0f;
+	public float hopeHeight = 1.25f;
+	float timerThrow = 0f;
+	//end modif
 
 	public bool littleBomb = false;
 
@@ -32,14 +39,23 @@ public class BombScript : MonoBehaviour {
 	}
 
 	void Update () {
+
 		limitDeath--;
 		if (limitDeath<0){Destroy(this.gameObject);}
-		float test = Vector3.Distance(this.gameObject.transform.position, endPos);
-		if (test > 0.5f && !isActivated)
+		distance = Vector3.Distance(this.gameObject.transform.position, endPos);
+		if (distance > 0.5f && !isActivated)
 		{
-			transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
+			//transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
+			// start modif
+			var height = Mathf.Sin(Mathf.PI * timerThrow) * hopeHeight;
+			transform.position = Vector3.Lerp(startPos, endPos, timerThrow) + Vector3.up * height; 
+			timerThrow += Time.deltaTime /(distance/10f);
+			//end modif
 		}
 		else{isActivated = true;}
+		{
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+		}
 
 		if (isActivated) 
 		{
