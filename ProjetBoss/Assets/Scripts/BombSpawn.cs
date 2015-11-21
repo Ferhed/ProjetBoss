@@ -11,7 +11,10 @@ public class BombSpawn : MonoBehaviour {
     public int maxTimer;
     public GameObject parentTile;
     public bool startspawn = false;
+	public float YCompens;
 
+	Vector3 SP;
+	GameObject boss;
     GameObject[] tabTile;
     int timer;
     float xRand;
@@ -22,8 +25,35 @@ public class BombSpawn : MonoBehaviour {
 	void Start () {
         timer = maxTimer;
 	}
-	
+
+	void chooseTile () {
+		tabTile = GameObject.FindGameObjectsWithTag("Ground");
+		Rand = Random.Range(0, maxRand);
+		xRand = tabTile[Rand].transform.position.x;
+		zRand = tabTile[Rand].transform.position.z;
+		timer = maxTimer;
+		GameObject go;
+		if (phase3)
+		{
+			go = (GameObject)Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
+		}
+		else
+		{
+			go = (GameObject)Instantiate(littleBomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
+		}
+		go.GetComponent<BombScript>().startPos = SP;
+	}
+
 	void Update () {
+		if (startspawn)
+		{
+			boss = GameObject.FindGameObjectWithTag("Boss");
+			if (boss)
+			{
+				SP = boss.transform.position;
+				SP.y += YCompens;
+			}
+		}
         if (!parentTile)
 		{
 			int count = GameObject.FindGameObjectsWithTag("parentTile").Length;
@@ -36,22 +66,21 @@ public class BombSpawn : MonoBehaviour {
         if (timer < 0 && startspawn && parentTile) 
         {
             maxRand = parentTile.transform.childCount;
-            if (maxRand > 0)
+            if (maxRand > 2)
             {
-                tabTile = GameObject.FindGameObjectsWithTag("Ground");
-                Rand = Random.Range(0, maxRand);
-                xRand = tabTile[Rand].transform.position.x;
-                zRand = tabTile[Rand].transform.position.z;
-                timer = maxTimer;
-                if (phase3)
-                {
-                    Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
-                }
-                else
-                {
-                    Instantiate(littleBomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
-                }
+				chooseTile();
+				chooseTile();
+				chooseTile();
             }
+			else if (maxRand > 1)
+			{
+				chooseTile();
+				chooseTile();
+			}
+			else if (maxRand == 1)
+			{
+				chooseTile();
+			}
         }
 	}
 }
