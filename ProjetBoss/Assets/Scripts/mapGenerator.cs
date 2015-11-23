@@ -12,18 +12,28 @@ public class mapGenerator : MonoBehaviour {
 	public int hauteurWall = 10;
     public GameObject[,] tiles;
 
+	public bool isColored;
+
+	int timeColorMax = 10;
+	int timerColor;
 	float compensation = 0.6f;
 
     Vector3 tailleTile;
 
 	void Start () {
+		timerColor = 0;
         tailleTile = tile.transform.localScale;
         tiles = new GameObject[largeur,longueur];
         generator();
 	}
 	
 	void Update () {
-	
+		timerColor--;
+		if (Input.GetKey(KeyCode.Z) && timerColor < 0)
+		{
+			timerColor = timeColorMax;
+			isColored = !isColored;
+		}
 	}
 
     void generator()

@@ -1,6 +1,15 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BombScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\BombScript.cs" Line="46" Column="39" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> 03ee77c329d083b820642adaaa35a6d06d48d466
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

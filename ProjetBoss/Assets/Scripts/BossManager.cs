@@ -46,31 +46,41 @@ public class BossManager : MonoBehaviour {
         switch (currentState)
         {
             case BossController.States.Phase1:
-                if (Time.realtimeSinceStartup - lastAct >= delay)
-                {
-                    lastAct = Time.realtimeSinceStartup;
-                    
-                    currentPhase1.GetComponent<BossController>().SwitchState(BossController.States.Phase1);
-                    
-                }else if(Time.realtimeSinceStartup - lastAct >= delay - 3)
-                {
-                    if (bosses[0].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[0].GetComponent<BossController>().hasCharged == false)
-                    {
-                        bosses[0].GetComponent<BossController>().Charge();
-                        bosses[0].GetComponent<BossController>().hasCharged = true;
-                        currentPhase1 = bosses[1];
-                        currentPhase1.GetComponent<BossController>().hasCharged = false;
-                    }
-                    else if (bosses[1].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[1].GetComponent<BossController>().hasCharged == false)
-                    {
-                        bosses[1].GetComponent<BossController>().Charge();
-                        bosses[1].GetComponent<BossController>().hasCharged = true;
-                        currentPhase1 = bosses[0];
-                        currentPhase1.GetComponent<BossController>().hasCharged = false;
-                    }
-                }
+                Phase1Behaviour();
                 break;
         }  
+    }
+
+    void Phase1Behaviour()
+    {
+        if(!bosses[0] || !bosses[1])
+        {
+            bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Phase2);
+        }
+        if (Time.realtimeSinceStartup - lastAct >= delay)
+        {
+            lastAct = Time.realtimeSinceStartup;
+
+            currentPhase1.GetComponent<BossController>().SwitchState(BossController.States.Phase1);
+
+        }
+        else if (Time.realtimeSinceStartup - lastAct >= delay - 3)
+        {
+            if (bosses[0].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[0].GetComponent<BossController>().hasCharged == false)
+            {
+                bosses[0].GetComponent<BossController>().Charge();
+                bosses[0].GetComponent<BossController>().hasCharged = true;
+                currentPhase1 = bosses[1];
+                currentPhase1.GetComponent<BossController>().hasCharged = false;
+            }
+            else if (bosses[1].GetComponent<BossController>().GetState() == BossController.States.Phase1 && bosses[1].GetComponent<BossController>().hasCharged == false)
+            {
+                bosses[1].GetComponent<BossController>().Charge();
+                bosses[1].GetComponent<BossController>().hasCharged = true;
+                currentPhase1 = bosses[0];
+                currentPhase1.GetComponent<BossController>().hasCharged = false;
+            }
+        }
     }
 
     public void EndPhase1(GameObject deadBoss)

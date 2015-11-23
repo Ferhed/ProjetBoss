@@ -9,6 +9,7 @@ public class attrapperJeter : MonoBehaviour {
 
     private Transform itemLink;
     private Camera camera;
+	public float timerToLaunch = 0f;
 	// Use this for initialization
 	void Start () {
         camera = Camera.main;
@@ -16,7 +17,12 @@ public class attrapperJeter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-        if((Input.GetMouseButtonDown(0) || Input.GetButtonDown("A_button_1"))&& handFull == false)
+		if (timerToLaunch != 0f) 
+		{
+			timerToLaunch =  Mathf.Max (0f, timerToLaunch-Time.deltaTime);
+		}
+
+		if((Input.GetMouseButtonDown(0) || Input.GetButtonDown("X_button_1"))&& itemLink == null)
         {
 
             Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width/2, Screen.height/2));
@@ -34,13 +40,15 @@ public class attrapperJeter : MonoBehaviour {
                     item.parent = transform;
                     item.GetComponent<Rigidbody>().isKinematic = true;
                     item.localPosition = new Vector3(-0.1f, -0.5f, 0.8f);
+					if (item.tag == "Bomb"){item.GetComponent<BombScript>().hasCatch();}
                     itemLink = item;
+					timerToLaunch = 0.2f;
                 }
             }
         }
 
 
-        if(Input.GetButtonDown("X_button_1") && itemLink != null)
+        else if(Input.GetButtonDown("X_button_1") && itemLink != null && timerToLaunch == 0f)
         {
             Rigidbody rb = itemLink.GetComponent<Rigidbody>();
             rb.isKinematic = false;

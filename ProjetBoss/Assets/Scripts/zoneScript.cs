@@ -21,7 +21,11 @@ public class zoneScript : MonoBehaviour {
     {
         if (other)
         {
-            if (other.tag == "Ground") { other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax; }
+			CubeScript test = other.gameObject.GetComponent<CubeScript>();
+            if (other.tag == "Ground" && test) 
+			{
+				test.rBomb = timer / timerMax; 
+			}
         }
     }
 
@@ -29,9 +33,10 @@ public class zoneScript : MonoBehaviour {
     {
         if (other)
         {
-            if (other.tag == "Ground")
+			CubeScript test = other.gameObject.GetComponent<CubeScript>();
+            if (other.tag == "Ground" && test)
             {
-                other.gameObject.GetComponent<CubeScript>().rBomb = timer / timerMax;
+                test.rBomb = timer / timerMax;
             }
         }
 

@@ -22,10 +22,12 @@ public class BossController : MonoBehaviour {
     public float invincibilityDelay = 2f;
     float invincibilityStart = 0f;
 
-    bool charging = false;
+    [HideInInspector]public bool charging = false;
     [HideInInspector]public bool hasCharged = false;
 
     Vector3 mapCenter;
+
+    private bool otherBossKilled = false;
 
     // Use this for initialization
     void Awake () {
@@ -114,7 +116,37 @@ public class BossController : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
         charging = false;
-        SwitchState(States.Idle);
+        if (!otherBossKilled)
+        {
+            SwitchState(States.Idle);
+        }
+        else
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+    }
+
+    IEnumerator ReturnCenter()
+    {
+        charging = true;
+
+        Vector3 startPosition = transform.position;
+        transform.LookAt(new Vector3(mapCenter.x, transform.position.y, mapCenter.z));
+
+        yield return new WaitForSeconds(1.5f);
+
+        while (transform.position.x != mapCenter.x && transform.position.z != mapCenter.z)
+        {
+            float step = speed * Time.deltaTime * chargeSpeedMultiplicator;
+            mapCenter.y = transform.position.y;
+            transform.position = Vector3.MoveTowards(transform.position, mapCenter, step);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        charging = false;
+
+        setLaser();
+
     }
 
     void Phase2Behaviour()
@@ -125,13 +157,7 @@ public class BossController : MonoBehaviour {
             SwitchState(States.Phase3);
         }
 
-        if(transform.position.x != mapCenter.x && transform.position.z != mapCenter.z)
-        {
-            Debug.Log(mapCenter.x+" "+ mapCenter.z);
-            float step = speed * Time.deltaTime;
-            mapCenter.y = transform.position.y;
-            transform.position = Vector3.MoveTowards(transform.position, mapCenter, step);
-        }
+        transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
     void Phase3Behaviour()
@@ -140,11 +166,14 @@ public class BossController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        
+        transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
-
 
     public void SwitchState(States s)
     {
+        //Debug.Log("state  " + s);
+
         currentState = s;
         if(s!= States.Idle && s != manager.currentState)
         {
@@ -161,11 +190,24 @@ public class BossController : MonoBehaviour {
             case States.Phase2:
                 manager.StartPhase2();
                 ChangeColor(Color.yellow);
+                StartCoroutine(ReturnCenter());
                 break;
             case States.Phase3:
                 manager.StartPhase3();
+                setLaser();
                 ChangeColor(Color.red);
                 break;
+        }
+    }
+
+    void setLaser()
+    {
+        transform.Find("Laser").gameObject.SetActive(true);
+
+        if (currentState == States.Phase3)
+        {
+            Debug.Log("laser");
+            transform.Find("LaserRear").gameObject.SetActive(true);
         }
     }
 
@@ -182,21 +224,24 @@ public class BossController : MonoBehaviour {
     {
         return currentState;
     }
+    
+    public void Damage(int n)
+    {
+        life -= n;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
 
-        bool hurt = false;
-
-        if(currentState == States.Idle || currentState == States.Phase1)
+        if(currentState == States.Phase1)
         {
-            hurt = collision.gameObject.tag == "Projectile";
+            if(collision.gameObject.tag == "Boss" && charging)
+            {
+                collision.gameObject.GetComponent<BossController>().Damage(1000);
+                otherBossKilled = true;
+            }
         }
-        else
-        {
-            hurt = collision.gameObject.tag == "Bomb";
-        }
-        if (hurt && Time.time - invincibilityStart > invincibilityDelay)
+        else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
         {
             life = 0;
             invincibilityStart = Time.time;
