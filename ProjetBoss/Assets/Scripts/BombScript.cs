@@ -54,7 +54,7 @@ public class BombScript : MonoBehaviour {
 		}
 		else{isActivated = true;}
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			//GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 
 		if (isActivated) 

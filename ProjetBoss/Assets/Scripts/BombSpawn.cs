@@ -5,6 +5,7 @@ public class BombSpawn : MonoBehaviour {
 
     public GameObject bomb;
     public GameObject littleBomb;
+    public float distRequis;
 
     [HideInInspector]public bool phase3 = false;
 
@@ -28,20 +29,31 @@ public class BombSpawn : MonoBehaviour {
 
 	void chooseTile () {
 		tabTile = GameObject.FindGameObjectsWithTag("Ground");
-		Rand = Random.Range(0, maxRand);
-		xRand = tabTile[Rand].transform.position.x;
-		zRand = tabTile[Rand].transform.position.z;
-		timer = maxTimer;
-		GameObject go;
-		if (phase3)
-		{
-			go = (GameObject)Instantiate(bomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
-		}
-		else
-		{
-			go = (GameObject)Instantiate(littleBomb, new Vector3(xRand, 1, zRand), Quaternion.identity);
-		}
-		go.GetComponent<BombScript>().startPos = SP;
+        bool stopSpawn = true;
+        while (stopSpawn) 
+        {
+		    Rand = Random.Range(0, maxRand);
+	        xRand = tabTile[Rand].transform.position.x;
+	        zRand = tabTile[Rand].transform.position.z;
+	        timer = maxTimer;
+	        GameObject go;
+            Vector3 posBomb =  new Vector3(xRand, 1, zRand);
+            float disPos = Vector3.Distance(posBomb, boss.transform.position);
+            if (disPos > distRequis)
+            {
+                Debug.Log(disPos);
+	            if (phase3)
+	            {
+		            go = (GameObject)Instantiate(bomb, posBomb, Quaternion.identity);
+	            }
+	            else
+	            {
+		            go = (GameObject)Instantiate(littleBomb, posBomb, Quaternion.identity);
+	            }
+	            go.GetComponent<BombScript>().startPos = SP;
+                stopSpawn = false;
+            }
+        }
 	}
 
 	void Update () {
@@ -63,7 +75,7 @@ public class BombSpawn : MonoBehaviour {
 			}
 		}
         timer--;
-        if (timer < 0 && startspawn && parentTile) 
+        if (timer < 0 && startspawn && parentTile && boss) 
         {
             maxRand = parentTile.transform.childCount;
             if (maxRand > 2)
