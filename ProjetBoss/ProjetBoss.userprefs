@@ -1,15 +1,13 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BombScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interraction.cs">
     <Files>
-      <File FileName="Assets\Scripts\BombScript.cs" Line="46" Column="39" />
+      <File FileName="Assets\Scripts\attrapperJeter.cs" Line="51" Column="50" />
+      <File FileName="Assets\Scripts\Interraction.cs" Line="22" Column="35" />
+      <File FileName="Assets\Scripts\Bouton.cs" Line="21" Column="36" />
+      <File FileName="Assets\Scripts\PorteAscenseur.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> 03ee77c329d083b820642adaaa35a6d06d48d466
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
