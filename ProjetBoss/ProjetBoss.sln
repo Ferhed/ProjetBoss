@@ -29,7 +29,11 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> ab1f23b0a8a704e458aec9c8ec1b9a7b7781348b
 =======
 																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/matthieu
