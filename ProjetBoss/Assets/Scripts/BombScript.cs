@@ -50,10 +50,13 @@ public class BombScript : MonoBehaviour {
 			var height = Mathf.Sin(Mathf.PI * timerThrow) * hopeHeight;
 			transform.position = Vector3.Lerp(startPos, endPos, timerThrow) + Vector3.up * height; 
 			timerThrow += Time.deltaTime /(distance/10f);
+            if (!isActivated) { this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; }
+
 			//end modif
 		}
 		else{isActivated = true;}
 		{
+
 			//GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 
