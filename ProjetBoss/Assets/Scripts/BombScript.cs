@@ -6,6 +6,7 @@ public class BombScript : MonoBehaviour {
     public GameObject expl;
     public int timerMax;
     public int timer;
+	public int diffTime;
 
 	float limitDeath = 1000f;
 	float speed = 0.1f;
@@ -23,6 +24,9 @@ public class BombScript : MonoBehaviour {
 		endPos = this.gameObject.transform.position;
 		this.gameObject.transform.position = startPos;
         timer = timerMax;
+		int rand = Random.Range (0, diffTime);
+		if (Random.Range (0, 2) == 1){rand *= -1;}
+		timer += rand;
 	}
 	
 	public void hasCatch () 
@@ -34,12 +38,16 @@ public class BombScript : MonoBehaviour {
 	void Update () {
 		limitDeath--;
 		if (limitDeath<0){Destroy(this.gameObject);}
-		float test = Vector3.Distance(this.gameObject.transform.position, endPos);
-		if (test > 0.5f && !isActivated)
+		float dist = Vector3.Distance(this.gameObject.transform.position, endPos);
+		if (dist > 0.5f && !isActivated)
 		{
 			transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
 		}
-		else{isActivated = true;}
+		else
+		{
+			if(!isActivated){this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;}
+			isActivated = true;
+		}
 
 		if (isActivated) 
 		{

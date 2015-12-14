@@ -14,6 +14,7 @@ public class mapGenerator : MonoBehaviour {
 
 	public bool isColored;
 
+	Texture saf;
 	int timeColorMax = 10;
 	int timerColor;
 	float compensation = 0.6f;
@@ -21,6 +22,7 @@ public class mapGenerator : MonoBehaviour {
     Vector3 tailleTile;
 
 	void Start () {
+		saf = Resources.Load ("texture/wallsaf") as Texture;
 		timerColor = 0;
         tailleTile = tile.transform.localScale;
         tiles = new GameObject[largeur,longueur];
@@ -79,6 +81,7 @@ public class mapGenerator : MonoBehaviour {
 						Transform partWall = yo.transform;
 						partWall.localScale = new Vector3(1,1,1);
 						yo.name = "CubeWall " + i + "-" + j + "-" + w;
+						if(i == 0 && j == 1 && w == 0){yo.GetComponent<Renderer>().material.mainTexture = saf;}
 						yo.tag = "Wall";
 						yo.transform.parent = PWall.transform;
 					}
