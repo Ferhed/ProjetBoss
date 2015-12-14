@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\mapGenerator.cs">
     <Files>
@@ -8,6 +9,15 @@
       <File FileName="Assets\Scripts\zoneScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\WallScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\mapGenerator.cs" Line="18" Column="24" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interraction.cs">
+    <Files>
+      <File FileName="Assets\Scripts\attrapperJeter.cs" Line="51" Column="50" />
+      <File FileName="Assets\Scripts\Interraction.cs" Line="22" Column="35" />
+      <File FileName="Assets\Scripts\Bouton.cs" Line="21" Column="36" />
+      <File FileName="Assets\Scripts\PorteAscenseur.cs" Line="1" Column="1" />
+>>>>>>> 05a5e8be91d5a579900b3f92473d29fc2b4ddb28
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

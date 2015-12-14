@@ -66,6 +66,8 @@ public class BossController : MonoBehaviour {
         }
     }
 
+    bool chargeCoroutine = false;
+
     void Phase1Behaviour()
     {
         if (life <= 0)
@@ -73,7 +75,7 @@ public class BossController : MonoBehaviour {
             manager.EndPhase1(gameObject);
         }
 
-        if (!charging)
+        if (!chargeCoroutine)
         {
             Vector3 positionPlayer = player.transform.position;
             if (Vector3.Distance(transform.position, new Vector3(positionPlayer.x, transform.position.y, positionPlayer.z)) > manager.stopDistance)
@@ -87,9 +89,10 @@ public class BossController : MonoBehaviour {
 
     public void Charge()
     {
-        if (!charging)
+        if (!chargeCoroutine)
         {
-            charging = true;
+            //charging = true;
+            chargeCoroutine = true;
             StartCoroutine(ChargeCoroutine());
         }
     }
@@ -99,27 +102,41 @@ public class BossController : MonoBehaviour {
         Vector3 positionPlayer = player.transform.position;
         Vector3 startPosition = transform.position;
         transform.LookAt(new Vector3(positionPlayer.x, transform.position.y, positionPlayer.z));
-
-        yield return new WaitForSeconds(1.5f);
         
+        yield return new WaitForSeconds(1.5f);
+
+        charging = true;
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
         bool canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
-        while (canMove)
+        while (canMove && charging && currentState == States.Phase1)
         {
             ray = new Ray(transform.position, transform.forward);
             canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed * chargeSpeedMultiplicator);
+
             yield return new WaitForSeconds(0.01f);
         }
+
         charging = false;
+        chargeCoroutine = false;
+
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         if (!otherBossKilled)
         {
             SwitchState(States.Idle);
         }
+        else
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+        Debug.Log("velocity = " + GetComponent<Rigidbody>().velocity);
+
     }
 
     IEnumerator ReturnCenter()
@@ -141,10 +158,8 @@ public class BossController : MonoBehaviour {
 
         charging = false;
 
-        if (!otherBossKilled)
-        {
-            SwitchState(States.Idle);
-        }
+        setLaser();
+
     }
 
     void Phase2Behaviour()
@@ -154,6 +169,8 @@ public class BossController : MonoBehaviour {
             life = 100;
             SwitchState(States.Phase3);
         }
+
+        transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
     void Phase3Behaviour()
@@ -190,9 +207,20 @@ public class BossController : MonoBehaviour {
                 break;
             case States.Phase3:
                 manager.StartPhase3();
+                setLaser();
                 ChangeColor(Color.red);
-                transform.Find("Laser").gameObject.SetActive(true);
                 break;
+        }
+    }
+
+    void setLaser()
+    {
+        transform.Find("Laser").gameObject.SetActive(true);
+
+        if (currentState == States.Phase3)
+        {
+            Debug.Log("laser");
+            transform.Find("LaserRear").gameObject.SetActive(true);
         }
     }
 
@@ -218,12 +246,40 @@ public class BossController : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
 
+        if(collision.gameObject.tag == "Boss")
+        {
+            Debug.Log("kill");
+        }
         if(currentState == States.Phase1)
         {
-            if(collision.gameObject.tag == "Boss" && charging)
+
+            if (collision.gameObject.tag == "Boss" && charging)
             {
                 collision.gameObject.GetComponent<BossController>().Damage(1000);
                 otherBossKilled = true;
+                charging = false;
+                chargeCoroutine = false;
+            }
+        }
+        else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
+        {
+            life = 0;
+            invincibilityStart = Time.time;
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (currentState == States.Phase1)
+        {
+
+            if (collision.gameObject.tag == "Boss" && charging)
+            {
+                collision.gameObject.GetComponent<BossController>().Damage(1000);
+                otherBossKilled = true;
+                charging = false;
+                chargeCoroutine = false;
+                Debug.Log(currentState);
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
