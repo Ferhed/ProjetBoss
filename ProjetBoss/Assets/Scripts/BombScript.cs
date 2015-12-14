@@ -46,31 +46,21 @@ public class BombScript : MonoBehaviour {
 
 		limitDeath--;
 		if (limitDeath<0){Destroy(this.gameObject);}
-<<<<<<< HEAD
-		float dist = Vector3.Distance(this.gameObject.transform.position, endPos);
-		if (dist > 0.5f && !isActivated)
-=======
+
+		//float dist = Vector3.Distance(this.gameObject.transform.position, endPos);
+		//if (dist > 0.5f && !isActivated)
+
 		distance = Vector3.Distance(this.gameObject.transform.position, endPos);
 		if (distance > 0.5f && !isActivated)
->>>>>>> 05a5e8be91d5a579900b3f92473d29fc2b4ddb28
 		{
-			//transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
-			// start modif
 			var height = Mathf.Sin(Mathf.PI * timerThrow) * hopeHeight;
 			transform.position = Vector3.Lerp(startPos, endPos, timerThrow) + Vector3.up * height; 
 			timerThrow += Time.deltaTime /(distance/10f);
-			//end modif
 		}
-<<<<<<< HEAD
 		else
 		{
 			if(!isActivated){this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;}
 			isActivated = true;
-=======
-		else{isActivated = true;}
-		{
-			//GetComponent<Rigidbody>().velocity = Vector3.zero;
->>>>>>> 05a5e8be91d5a579900b3f92473d29fc2b4ddb28
 		}
 
 		if (isActivated) 
