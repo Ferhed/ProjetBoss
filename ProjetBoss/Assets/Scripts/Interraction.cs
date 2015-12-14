@@ -10,8 +10,8 @@ public class Interraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		Debug.DrawLine(Camera.main.transform.position,transform.forward,Color.red);
+
+        Debug.DrawLine(Camera.main.transform.position, transform.position + transform.forward, Color.red);
 		Debug.DrawRay(Camera.main.transform.position,transform.forward, Color.red);
 		if(Input.GetButtonDown("B_button_1"))
 		{

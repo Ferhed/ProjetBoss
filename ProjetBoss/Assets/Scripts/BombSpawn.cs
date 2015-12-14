@@ -65,6 +65,7 @@ public class BombSpawn : MonoBehaviour {
 				SP = boss.transform.position;
 				SP.y += YCompens;
 			}
+            timer--;
 		}
         if (!parentTile)
 		{
@@ -74,7 +75,6 @@ public class BombSpawn : MonoBehaviour {
 				parentTile = GameObject.FindGameObjectsWithTag("parentTile")[0];
 			}
 		}
-        timer--;
         if (timer < 0 && startspawn && parentTile && boss) 
         {
             maxRand = parentTile.transform.childCount;
