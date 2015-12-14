@@ -6,6 +6,7 @@ public class BombScript : MonoBehaviour {
     public GameObject expl;
     public int timerMax;
     public int timer;
+	public int diffTime;
 
 	float limitDeath = 1000f;
 	float speed = 0.1f;
@@ -30,6 +31,9 @@ public class BombScript : MonoBehaviour {
 		endPos = this.gameObject.transform.position;
 		this.gameObject.transform.position = startPos;
         timer = timerMax;
+		int rand = Random.Range (0, diffTime);
+		if (Random.Range (0, 2) == 1){rand *= -1;}
+		timer += rand;
 	}
 	
 	public void hasCatch () 
@@ -42,22 +46,32 @@ public class BombScript : MonoBehaviour {
 
 		limitDeath--;
 		if (limitDeath<0){Destroy(this.gameObject);}
+
+		//float dist = Vector3.Distance(this.gameObject.transform.position, endPos);
+		//if (dist > 0.5f && !isActivated)
+
 		distance = Vector3.Distance(this.gameObject.transform.position, endPos);
 		if (distance > 0.5f && !isActivated)
 		{
-			//transform.position = Vector3.MoveTowards(this.gameObject.transform.position, endPos, speed);
-			// start modif
 			var height = Mathf.Sin(Mathf.PI * timerThrow) * hopeHeight;
 			transform.position = Vector3.Lerp(startPos, endPos, timerThrow) + Vector3.up * height; 
 			timerThrow += Time.deltaTime /(distance/10f);
+<<<<<<< HEAD
             if (!isActivated) { this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; }
 
 			//end modif
+=======
+>>>>>>> e2c0d8ba47dcd6274418ca2c75f577fa51bd34bd
 		}
-		else{isActivated = true;}
+		else
 		{
+<<<<<<< HEAD
 
 			//GetComponent<Rigidbody>().velocity = Vector3.zero;
+=======
+			if(!isActivated){this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;}
+			isActivated = true;
+>>>>>>> e2c0d8ba47dcd6274418ca2c75f577fa51bd34bd
 		}
 
 		if (isActivated) 
