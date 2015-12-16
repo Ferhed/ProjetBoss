@@ -5,6 +5,10 @@ public class Bouton : MonoBehaviour {
 
 	public GameObject ascenseur;
 	PorteAscenseur porte;
+    bool gameLaunch = false;
+    public Light light;
+    bool activateLight = false;
+    float timer = 0f;
 
 	public enum TYPE
 	{
@@ -20,13 +24,29 @@ public class Bouton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (activateLight)
+        {
+            var height = (Mathf.Sin(Mathf.PI * timer) + 2);
+            Debug.Log(height);
+            timer += Time.deltaTime;
+            light.intensity = height;
+        }
 	}
 	public void utiliserBouton()
 	{
-		if(monType == TYPE.OUVERTURE)
+		if(!gameLaunch || monType == TYPE.OUVERTURE)
 		{
-			porte.ouverturePorte();
+            gameLaunch = true;
+            activateLight = true;
+            GetComponent<AudioSource>().Play();
+            Invoke("launchGame", 10);
 		}
 	}
+
+
+    void launchGame()
+    {
+        activateLight = false;
+        porte.ouverturePorte();
+    }
 }

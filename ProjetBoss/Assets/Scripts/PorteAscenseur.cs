@@ -26,7 +26,7 @@ public class PorteAscenseur : MonoBehaviour {
             //Debug.Log(ratio);
 
             porte.transform.localScale = new Vector3(1,1,ratio);
-            porte.transform.localPosition = new Vector3(0, 0, (ratio / 2)-0.5f);
+            porte.transform.localPosition = new Vector3(0, 0.024f, (ratio / 2) - 0.5f);
         }
 
         if(Input.GetKeyDown(KeyCode.A))
