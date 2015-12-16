@@ -31,7 +31,7 @@ public class mapGenerator : MonoBehaviour {
 	
 	void Update () {
 		timerColor--;
-		if (Input.GetKey(KeyCode.Z) && timerColor < 0)
+		if (Input.GetKey(KeyCode.Keypad5) && timerColor < 0)
 		{
 			timerColor = timeColorMax;
 			isColored = !isColored;
