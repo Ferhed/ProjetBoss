@@ -77,6 +77,10 @@ public class BombScript : MonoBehaviour {
 				{
 					Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
 				}
+				GameObject Cam = GameObject.FindGameObjectWithTag("MainCamera");
+				float distShake = Vector3.Distance(this.gameObject.transform.position,Cam.transform.position)/20;
+				Cam.GetComponent<ScreenShakeScript>().shakeAmount = Mathf.Cos(distShake);
+				Cam.GetComponent<ScreenShakeScript>().shake = 1.0f;
 				Destroy(this.gameObject);
 			}
 		}

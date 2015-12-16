@@ -41,7 +41,7 @@ public class BombSpawn : MonoBehaviour {
             float disPos = Vector3.Distance(posBomb, boss.transform.position);
             if (disPos > distRequis)
             {
-                Debug.Log(disPos);
+                //Debug.Log(disPos);
 	            if (phase3)
 	            {
 		            go = (GameObject)Instantiate(bomb, posBomb, Quaternion.identity);

@@ -135,7 +135,7 @@ public class BossController : MonoBehaviour {
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        Debug.Log("velocity = " + GetComponent<Rigidbody>().velocity);
+        //Debug.Log("velocity = " + GetComponent<Rigidbody>().velocity);
 
     }
 
@@ -219,7 +219,7 @@ public class BossController : MonoBehaviour {
 
         if (currentState == States.Phase3)
         {
-            Debug.Log("laser");
+            //Debug.Log("laser");
             transform.Find("LaserRear").gameObject.SetActive(true);
         }
     }
@@ -248,7 +248,7 @@ public class BossController : MonoBehaviour {
 
         if(collision.gameObject.tag == "Boss")
         {
-            Debug.Log("kill");
+            //Debug.Log("kill");
         }
         if(currentState == States.Phase1)
         {
@@ -279,7 +279,7 @@ public class BossController : MonoBehaviour {
                 otherBossKilled = true;
                 charging = false;
                 chargeCoroutine = false;
-                Debug.Log(currentState);
+                //Debug.Log(currentState);
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
