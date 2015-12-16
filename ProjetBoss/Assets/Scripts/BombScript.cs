@@ -78,9 +78,13 @@ public class BombScript : MonoBehaviour {
 					Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
 				}
 				GameObject Cam = GameObject.FindGameObjectWithTag("MainCamera");
-				float distShake = Vector3.Distance(this.gameObject.transform.position,Cam.transform.position)/20;
-				Cam.GetComponent<ScreenShakeScript>().shakeAmount = Mathf.Cos(distShake);
-				Cam.GetComponent<ScreenShakeScript>().shake = 1.0f;
+				float distShake = Mathf.Cos(Vector3.Distance(this.gameObject.transform.position,Cam.transform.position)/20);
+				if (Cam.GetComponent<ScreenShakeScript>().shakeAmount < distShake)
+				{
+					//Debug.Log(distShake/2);
+					Cam.GetComponent<ScreenShakeScript>().shakeAmount = distShake/2;
+					Cam.GetComponent<ScreenShakeScript>().shake = 0.8f;
+				}
 				Destroy(this.gameObject);
 			}
 		}

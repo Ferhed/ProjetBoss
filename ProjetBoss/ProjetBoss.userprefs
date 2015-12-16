@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\mapGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BombScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\mapGenerator.cs" Line="34" Column="3" />
+      <File FileName="Assets\Scripts\BombScript.cs" Line="84" Column="8" />
+      <File FileName="Assets\Scripts\ScreenShakeScript.cs" Line="30" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

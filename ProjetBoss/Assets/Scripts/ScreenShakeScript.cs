@@ -27,6 +27,7 @@ public class ScreenShakeScript : MonoBehaviour {
 		else 
 		{
 			shake = 0.0f;
+			shakeAmount = 0.0f;
 		}
 	}
 }
