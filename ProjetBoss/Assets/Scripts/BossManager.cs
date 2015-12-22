@@ -35,10 +35,17 @@ public class BossManager : MonoBehaviour {
 
     public void BossBegining()
     {
-        bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
-        bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Idle);
-        currentState = BossController.States.Phase1;
+		Invoke("bossWillBegining",2f);
+		
+		UIManager.Instance.launchUI("Mecanix & Patafix");
     }
+
+	void bossWillBegining()
+	{
+		bosses[0].GetComponent<BossController>().SwitchState(BossController.States.Phase1);
+		bosses[1].GetComponent<BossController>().SwitchState(BossController.States.Idle);
+		currentState = BossController.States.Phase1;
+	}
 
 
     void Update()

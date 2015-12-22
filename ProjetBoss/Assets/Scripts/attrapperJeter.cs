@@ -17,6 +17,10 @@ public class attrapperJeter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			UIManager.Instance.launchUI("Coucou Toi");
+		}
 		if (timerToLaunch != 0f) 
 		{
 			timerToLaunch =  Mathf.Max (0f, timerToLaunch-Time.deltaTime);
@@ -40,6 +44,7 @@ public class attrapperJeter : MonoBehaviour {
                     item.parent = transform;
                     item.GetComponent<Rigidbody>().isKinematic = true;
                     item.localPosition = new Vector3(-0.1f, -0.5f, 0.8f);
+					item.localScale *= 0.5f;
 					if (item.tag == "Bomb"){item.GetComponent<BombScript>().hasCatch();}
                     itemLink = item;
 					timerToLaunch = 0.2f;
@@ -53,6 +58,8 @@ public class attrapperJeter : MonoBehaviour {
             Rigidbody rb = itemLink.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             itemLink.parent = null;
+			
+			itemLink.localScale *= 2f;
             rb.AddForce(camera.transform.forward * puissance);
             itemLink = null;
 
