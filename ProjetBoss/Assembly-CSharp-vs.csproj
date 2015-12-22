@@ -56,7 +56,9 @@
      <Compile Include="Assets\Scripts\Interraction.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
      <Compile Include="Assets\Scripts\PorteAscenseur.cs" />
+     <Compile Include="Assets\Scripts\ScreenShakeScript.cs" />
      <Compile Include="Assets\Scripts\StartExpl.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\WallScript.cs" />
      <Compile Include="Assets\Scripts\attrapperJeter.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
