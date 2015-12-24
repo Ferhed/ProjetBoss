@@ -38,6 +38,9 @@ public class Bouton : MonoBehaviour {
 		{
             gameLaunch = true;
             activateLight = true;
+			GameObject Cam = GameObject.FindGameObjectWithTag("MainCamera");
+			Cam.GetComponent<ScreenShakeScript>().shakeAmount = 0.005f;
+			Cam.GetComponent<ScreenShakeScript>().shake = 10f;
             GetComponent<AudioSource>().Play();
             Invoke("launchGame", 10);
 		}
