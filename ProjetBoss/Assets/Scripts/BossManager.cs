@@ -37,7 +37,7 @@ public class BossManager : MonoBehaviour {
     {
 		Invoke("bossWillBegining",2f);
 		
-		UIManager.Instance.launchUI("Mecanix & Patafix");
+		UIManager.Instance.launchUI("Mecanix & Patafix",20);
     }
 
 	void bossWillBegining()

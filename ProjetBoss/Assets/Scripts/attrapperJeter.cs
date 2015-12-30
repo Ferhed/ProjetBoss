@@ -19,7 +19,7 @@ public class attrapperJeter : MonoBehaviour {
 	
 		if(Input.GetKeyDown(KeyCode.P))
 		{
-			UIManager.Instance.launchUI("Coucou Toi");
+			UIManager.Instance.launchUI("Coucou Toi",50);
 		}
 		if (timerToLaunch != 0f) 
 		{
