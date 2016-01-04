@@ -27,6 +27,8 @@ public class BossController : MonoBehaviour {
 
     Vector3 mapCenter;
 
+    public float minPlayerDistance = 1f;
+
     private bool otherBossKilled = false;
 
     // Use this for initialization
@@ -38,9 +40,15 @@ public class BossController : MonoBehaviour {
 
         ChangeColor(Color.gray);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    PlayerLife playerLife;
+
+    void Start()
+    {
+        playerLife = FindObjectOfType<PlayerLife>();
+    }
+    // Update is called once per frame
+    void Update () {
         switch (currentState)
         {
             case States.Idle:
@@ -169,6 +177,10 @@ public class BossController : MonoBehaviour {
             life = 100;
             SwitchState(States.Phase3);
         }
+        else if(Vector3.Distance(this.transform.position,player.transform.position) < minPlayerDistance)
+        {
+            playerLife.Die();
+        }
 
         transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
@@ -179,7 +191,11 @@ public class BossController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        
+        else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
+        {
+            playerLife.Die();
+        }
+
         transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
@@ -259,6 +275,9 @@ public class BossController : MonoBehaviour {
                 otherBossKilled = true;
                 charging = false;
                 chargeCoroutine = false;
+            }else if(collision.gameObject.tag == "Player" && charging)
+            {
+                playerLife.Die();
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
@@ -280,6 +299,10 @@ public class BossController : MonoBehaviour {
                 charging = false;
                 chargeCoroutine = false;
                 //Debug.Log(currentState);
+            }
+            else if (collision.gameObject.tag == "Player" && charging)
+            {
+                playerLife.Die();
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
