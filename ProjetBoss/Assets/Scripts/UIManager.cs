@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class UIManager : MonoBehaviour {
 	
@@ -20,6 +21,12 @@ public class UIManager : MonoBehaviour {
 	public GameObject panel;
 	public Text text;
 	public GameObject player;
+	FirstPersonController controller;
+
+	void Start()
+	{
+		controller = player.GetComponent<FirstPersonController> ();
+	}
 
 	public void launchUI(string word , int percent)
 	{
@@ -29,6 +36,7 @@ public class UIManager : MonoBehaviour {
 
 	IEnumerator UIAffichage(string word, int percent)
 	{
+		controller.enabled = false;
 		float pourcentage = percent;
 		Time.timeScale = 1*(pourcentage/100);
 		Color colorPanel = panel.GetComponent<Image>().color;
@@ -37,7 +45,7 @@ public class UIManager : MonoBehaviour {
 		float currentColor = 0;
 		while(currentColor < 1)
 		{
-			Debug.Log(currentColor);
+			//Debug.Log(currentColor);
 			currentColor += 0.05f;
 			panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
 			text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);
@@ -48,7 +56,7 @@ public class UIManager : MonoBehaviour {
 
 		while (currentColor > 0)
 		{
-			Debug.Log(currentColor);
+			//Debug.Log(currentColor);
 			currentColor -= 0.075f;
 			panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
 			text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);
@@ -62,5 +70,7 @@ public class UIManager : MonoBehaviour {
 		}
 
 		Time.timeScale = 1;
+		
+		controller.enabled = true;
 	}
 }

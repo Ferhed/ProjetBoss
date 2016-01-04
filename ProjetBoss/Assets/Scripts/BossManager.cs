@@ -22,8 +22,8 @@ public class BossManager : MonoBehaviour {
 
         mapGenerator map = GameObject.Find("MapManager").GetComponent<mapGenerator>();
 
-        GameObject boss1 = Instantiate(bossPrefab, new Vector3(map.largeur/2-1f,5,map.longueur/2), Quaternion.identity) as GameObject;
-        GameObject boss2 = Instantiate(bossPrefab, new Vector3(map.largeur / 2+1f, 5, map.longueur / 2), Quaternion.identity) as GameObject;
+        GameObject boss1 = Instantiate(bossPrefab, new Vector3(map.largeur/2-2f,5,map.longueur/2), Quaternion.identity) as GameObject;
+        GameObject boss2 = Instantiate(bossPrefab, new Vector3(map.largeur / 2+2f, 5, map.longueur / 2), Quaternion.identity) as GameObject;
 
         bosses[0] = boss1;
         bosses[1] = boss2;
