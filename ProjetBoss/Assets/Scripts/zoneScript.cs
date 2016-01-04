@@ -6,8 +6,12 @@ public class zoneScript : MonoBehaviour {
     float timer;
     float timerMax;
 
+    BombScript bomb;
 
 	void Start () {
+
+        bomb = GetComponentInParent<BombScript>();
+
         timer = this.gameObject.GetComponentInParent<BombScript>().timer;
         timerMax = this.gameObject.GetComponentInParent<BombScript>().timerMax;
 	}
@@ -22,10 +26,13 @@ public class zoneScript : MonoBehaviour {
         if (other)
         {
 			CubeScript test = other.gameObject.GetComponent<CubeScript>();
-            if (other.tag == "Ground" && test) 
-			{
-				test.rBomb = timer / timerMax; 
-			}
+            if (other.tag == "Ground" && test)
+            {
+                test.rBomb = timer / timerMax;
+            } else if (other.tag == "Player")
+            {
+                bomb.playerInZone = true;
+            }
         }
     }
 
@@ -40,6 +47,14 @@ public class zoneScript : MonoBehaviour {
             }
         }
 
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            bomb.playerInZone = false;
+        }
     }
 
 }
