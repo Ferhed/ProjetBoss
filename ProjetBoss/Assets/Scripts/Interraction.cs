@@ -3,9 +3,12 @@ using System.Collections;
 
 public class Interraction : MonoBehaviour {
 
+	AudioClip WallSSound;
+	AudioSource source;
+
 	// Use this for initialization
 	void Start () {
-	
+		WallSSound = Resources.Load ("SFX/WallSSound") as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +26,15 @@ public class Interraction : MonoBehaviour {
 				if(hit.transform.gameObject.tag == "Bouton")
 				{
 					hit.transform.GetComponent<Bouton>().utiliserBouton();
+				}
+				if(hit.transform.gameObject.name == "CubeWall 0-1-0")
+				{
+					source = hit.transform.gameObject.GetComponent<AudioSource> ();
+					if (!source.isPlaying)
+					{
+						source.clip = WallSSound;
+						source.Play();
+					}
 				}
 			}
 		}

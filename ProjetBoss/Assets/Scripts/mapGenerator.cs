@@ -81,7 +81,7 @@ public class mapGenerator : MonoBehaviour {
 						Transform partWall = yo.transform;
 						partWall.localScale = new Vector3(1,1,1);
 						yo.name = "CubeWall " + i + "-" + j + "-" + w;
-						if(i == 0 && j == 1 && w == 0){yo.GetComponent<Renderer>().material.mainTexture = saf;}
+						if(i == 0 && j == 1 && w == 0){yo.GetComponent<Renderer>().material.mainTexture = saf; yo.AddComponent<AudioSource>();}
 						yo.tag = "Wall";
 						yo.transform.parent = PWall.transform;
 					}

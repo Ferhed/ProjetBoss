@@ -1,15 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interraction.cs">
     <Files>
+      <File FileName="Assets\Scripts\Interraction.cs" Line="36" Column="21" />
       <File FileName="Assets\Scripts\Bouton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\attrapperJeter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="53" Column="47" />
-      <File FileName="Assets\Scripts\mapGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StartExpl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="4" Column="1" />
-      <File FileName="Assets\Scripts\Interraction.cs" Line="22" Column="7" />
+      <File FileName="Assets\Scripts\mapGenerator.cs" Line="84" Column="125" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
