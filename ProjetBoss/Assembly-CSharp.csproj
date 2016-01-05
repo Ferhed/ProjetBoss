@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BossManager.cs" />
      <Compile Include="Assets\Scripts\Bouton.cs" />
      <Compile Include="Assets\Scripts\CubeScript.cs" />
+     <Compile Include="Assets\Scripts\DeathShaderScript.cs" />
      <Compile Include="Assets\Scripts\ExplScript.cs" />
      <Compile Include="Assets\Scripts\Interraction.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
@@ -70,6 +71,7 @@
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Resources\texture\Death.shader" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
