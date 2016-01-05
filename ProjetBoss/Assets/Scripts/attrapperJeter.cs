@@ -63,6 +63,7 @@ public class attrapperJeter : MonoBehaviour {
             rb.AddForce(camera.transform.forward * puissance);
             itemLink = null;
 
+            AudioSource.PlayClipAtPoint(SoundManager.Instance.throwSound, transform.position, 1f);
         }
         else if(Input.GetButtonDown("X_button_1") && handFull == false)
         {
