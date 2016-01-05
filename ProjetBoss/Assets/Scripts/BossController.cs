@@ -125,6 +125,11 @@ public class BossController : MonoBehaviour {
             ray = new Ray(transform.position, transform.forward);
             canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
+            if (!canMove)
+            {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundWall, transform.position, 1f);
+            }
+
             transform.Translate(Vector3.forward * Time.deltaTime * speed * chargeSpeedMultiplicator);
 
             yield return new WaitForSeconds(0.01f);
@@ -222,6 +227,7 @@ public class BossController : MonoBehaviour {
                 StartCoroutine(ReturnCenter());
                 break;
             case States.Phase3:
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[0], transform.position, 3f);
                 manager.StartPhase3();
                 setLaser();
                 ChangeColor(Color.red);
@@ -271,6 +277,7 @@ public class BossController : MonoBehaviour {
 
             if (collision.gameObject.tag == "Boss" && charging)
             {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundBoss, transform.position, 1f);
                 collision.gameObject.GetComponent<BossController>().Damage(1000);
                 otherBossKilled = true;
                 charging = false;
@@ -294,6 +301,7 @@ public class BossController : MonoBehaviour {
 
             if (collision.gameObject.tag == "Boss" && charging)
             {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundBoss, transform.position, 1f);
                 collision.gameObject.GetComponent<BossController>().Damage(1000);
                 otherBossKilled = true;
                 charging = false;

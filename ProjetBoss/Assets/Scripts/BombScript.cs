@@ -78,6 +78,10 @@ public class BombScript : MonoBehaviour {
 			timer--;
 			if (timer<0)
 			{
+                int n = Random.Range(0, SoundManager.Instance.explosionsSounds.Length);
+
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[n], transform.position, 1f);
+
                 if (playerInZone)
                 {
                     playerLife.Die();

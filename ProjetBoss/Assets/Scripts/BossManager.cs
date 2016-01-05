@@ -3,6 +3,18 @@ using System.Collections;
 
 public class BossManager : MonoBehaviour {
 
+    static BossManager instance;
+    public static BossManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+    void Awake()
+    {
+        instance = this;
+    }
     public GameObject bossPrefab;
     public StartExpl startExpl;
 
@@ -35,7 +47,9 @@ public class BossManager : MonoBehaviour {
 
     public void BossBegining()
     {
-		Invoke("bossWillBegining",2f);
+        SoundManager.Instance.PlaySound(gameObject, SoundManager.Instance.bossMusic, 0.5f);
+
+        Invoke("bossWillBegining",2f);
 		
 		UIManager.Instance.launchUI("Mecanix & Patafix",20);
     }
