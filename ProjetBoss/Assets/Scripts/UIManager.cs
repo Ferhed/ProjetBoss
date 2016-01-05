@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour {
 
 	void Start()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
 		controller = player.GetComponent<FirstPersonController> ();
 	}
 
