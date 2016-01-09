@@ -18,6 +18,7 @@ public class PlayerLife : MonoBehaviour {
             dead = true;
 
 
+
             Invoke("LaunchAnim", 1f);
         }
     }
@@ -34,7 +35,7 @@ public class PlayerLife : MonoBehaviour {
         fading = 0.0f;
     }
 
-    // Update is called once per frame
+	// Update is called once per frame
     void Update()
     {
         if (dead)
@@ -44,6 +45,8 @@ public class PlayerLife : MonoBehaviour {
             foreach (GameObject part in listHand)
             {
                 rend = part.GetComponent<Renderer>();
+				/*Vector3 orig = rend.gameObject.GetComponentInParent<Transform>().position;
+				rend.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10f, orig, 10f);*/
                 rend.material.SetFloat("_Treshold", fading);
             }
         }
