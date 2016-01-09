@@ -5,9 +5,11 @@ public class Interraction : MonoBehaviour {
 
 	AudioClip WallSSound;
 	AudioSource source;
+	GameObject snail;
 
 	// Use this for initialization
 	void Start () {
+		snail = Resources.Load ("Prefabs/SAFILOS") as GameObject;
 		WallSSound = Resources.Load ("SFX/WallSSound") as AudioClip;
 	}
 	
@@ -32,6 +34,7 @@ public class Interraction : MonoBehaviour {
 					source = hit.transform.gameObject.GetComponent<AudioSource> ();
 					if (!source.isPlaying)
 					{
+						Instantiate(snail);
 						source.clip = WallSSound;
 						source.Play();
 					}
