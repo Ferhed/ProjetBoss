@@ -33,7 +33,7 @@ public class attrapperJeter : MonoBehaviour {
             RaycastHit hit;
            // if (Physics.Raycast(ray, out hit, distanceAttrappe))
             LayerMask mask = 1 << 8;
-            Collider[] testItem = Physics.OverlapSphere((camera.transform.position + camera.transform.forward * 2), 2f, mask);
+            Collider[] testItem = Physics.OverlapSphere((camera.transform.position + camera.transform.forward), 1.5f, mask);
             if(testItem.Length > 0)
             {
 
@@ -63,6 +63,7 @@ public class attrapperJeter : MonoBehaviour {
             rb.AddForce(camera.transform.forward * puissance);
             itemLink = null;
 
+            AudioSource.PlayClipAtPoint(SoundManager.Instance.throwSound, transform.position, 1f);
         }
         else if(Input.GetButtonDown("X_button_1") && handFull == false)
         {

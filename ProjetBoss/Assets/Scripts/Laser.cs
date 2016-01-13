@@ -3,11 +3,18 @@ using System.Collections;
 
 public class Laser : MonoBehaviour {
 
-	void OnTriggerEnter(Collider other)
+    PlayerLife playerLife;
+
+    void Start()
+    {
+        playerLife = FindObjectOfType<PlayerLife>();
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            //Debug.Log("ok");
+            playerLife.Die();
         }
     }
 }

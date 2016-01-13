@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ExplScript : MonoBehaviour {
 
-    int timer = 10;
+    public int timer = 10;
 
 
 	void Start () {

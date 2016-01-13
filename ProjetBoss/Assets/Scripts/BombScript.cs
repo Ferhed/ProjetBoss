@@ -26,8 +26,13 @@ public class BombScript : MonoBehaviour {
 
 	public bool isActivated = false;
 
+    public bool playerInZone = false;
+
+    PlayerLife playerLife;
+
 	void Start () {
-		boss = GameObject.FindGameObjectWithTag ("Boss");
+        playerLife = FindObjectOfType<PlayerLife>();
+        boss = GameObject.FindGameObjectWithTag ("Boss");
 		endPos = this.gameObject.transform.position;
 		this.gameObject.transform.position = startPos;
         timer = timerMax;
@@ -73,6 +78,15 @@ public class BombScript : MonoBehaviour {
 			timer--;
 			if (timer<0)
 			{
+                int n = Random.Range(0, SoundManager.Instance.explosionsSounds.Length);
+
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[n], transform.position, 1f);
+
+                if (playerInZone)
+                {
+                    playerLife.Die();
+                }
+
 				if (!littleBomb)
 				{
 					Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);

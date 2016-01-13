@@ -27,6 +27,8 @@ public class BossController : MonoBehaviour {
 
     Vector3 mapCenter;
 
+    public float minPlayerDistance = 1f;
+
     private bool otherBossKilled = false;
 
     // Use this for initialization
@@ -38,9 +40,15 @@ public class BossController : MonoBehaviour {
 
         ChangeColor(Color.gray);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    PlayerLife playerLife;
+
+    void Start()
+    {
+        playerLife = FindObjectOfType<PlayerLife>();
+    }
+    // Update is called once per frame
+    void Update () {
         switch (currentState)
         {
             case States.Idle:
@@ -117,6 +125,11 @@ public class BossController : MonoBehaviour {
             ray = new Ray(transform.position, transform.forward);
             canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
+            if (!canMove)
+            {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundWall, transform.position, 1f);
+            }
+
             transform.Translate(Vector3.forward * Time.deltaTime * speed * chargeSpeedMultiplicator);
 
             yield return new WaitForSeconds(0.01f);
@@ -169,6 +182,10 @@ public class BossController : MonoBehaviour {
             life = 100;
             SwitchState(States.Phase3);
         }
+        else if(Vector3.Distance(this.transform.position,player.transform.position) < minPlayerDistance)
+        {
+            playerLife.Die();
+        }
 
         transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
@@ -179,7 +196,11 @@ public class BossController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        
+        else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
+        {
+            playerLife.Die();
+        }
+
         transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
@@ -206,6 +227,7 @@ public class BossController : MonoBehaviour {
                 StartCoroutine(ReturnCenter());
                 break;
             case States.Phase3:
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[0], transform.position, 3f);
                 manager.StartPhase3();
                 setLaser();
                 ChangeColor(Color.red);
@@ -255,10 +277,14 @@ public class BossController : MonoBehaviour {
 
             if (collision.gameObject.tag == "Boss" && charging)
             {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundBoss, transform.position, 1f);
                 collision.gameObject.GetComponent<BossController>().Damage(1000);
                 otherBossKilled = true;
                 charging = false;
                 chargeCoroutine = false;
+            }else if(collision.gameObject.tag == "Player" && charging)
+            {
+                playerLife.Die();
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
@@ -275,11 +301,16 @@ public class BossController : MonoBehaviour {
 
             if (collision.gameObject.tag == "Boss" && charging)
             {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.bumpSoundBoss, transform.position, 1f);
                 collision.gameObject.GetComponent<BossController>().Damage(1000);
                 otherBossKilled = true;
                 charging = false;
                 chargeCoroutine = false;
                 //Debug.Log(currentState);
+            }
+            else if (collision.gameObject.tag == "Player" && charging)
+            {
+                playerLife.Die();
             }
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)

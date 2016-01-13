@@ -27,7 +27,7 @@ public class Bouton : MonoBehaviour {
         if (activateLight)
         {
             var height = (Mathf.Sin(Mathf.PI * timer) + 2);
-            Debug.Log(height);
+            //Debug.Log(height);
             timer += Time.deltaTime;
             light.intensity = height;
         }
