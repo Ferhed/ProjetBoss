@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: e9517ea200698904fa03dde66fd662bb
+timeCreated: 1452695976
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ms_colonne_ver
+    100004: ms_coque_robot
+    100006: ms_cote_1
+    100008: ms_cote_2
+    100010: ms_cote_3
+    100012: ms_cuisse_l
+    100014: ms_cuisse_r
+    100016: ms_doigt_cent_l_1
+    100018: ms_doigt_cent_l_2
+    100020: ms_doigt_cent_r_1
+    100022: ms_doigt_cent_r_2
+    100024: ms_doigt_l_1
+    100026: ms_doigt_l_1 1
+    100028: ms_doigt_l_2
+    100030: ms_doigt_l_2 1
+    100032: ms_doigt_r_1
+    100034: ms_doigt_r_1 1
+    100036: ms_doigt_r_2
+    100038: ms_doigt_r_2 1
+    100040: ms_door_b_l
+    100042: ms_door_b_r
+    100044: ms_door_f_l
+    100046: ms_door_f_r
+    100048: ms_genou_l
+    100050: ms_genou_r
+    100052: ms_hanche_l_1
+    100054: ms_hanche_l_2
+    100056: ms_hanche_l_3
+    100058: ms_hanche_l_4
+    100060: ms_hanche_pelvis_1_l
+    100062: ms_hanche_pelvis_1_r
+    100064: ms_hanche_pelvis_2_l
+    100066: ms_hanche_pelvis_2_r
+    100068: ms_hanche_r_1
+    100070: ms_hanche_r_2
+    100072: ms_hanche_r_3
+    100074: ms_hanche_r_4
+    100076: ms_Object002
+    100078: ms_Object015
+    100080: ms_pelvis
+    100082: ms_pelvis_1
+    100084: ms_pelvis_2
+    100086: ms_phare_robot
+    100088: ms_pied_l
+    100090: ms_pied_r
+    100092: ms_protec_doigt_cent_l
+    100094: ms_protec_doigt_cent_r
+    100096: ms_protec_doigt_l
+    100098: ms_protec_doigt_l 1
+    100100: ms_protec_doigt_r
+    100102: ms_protec_doigt_r 1
+    100104: ms_protec_pied_l
+    100106: ms_protec_pied_r
+    100108: ms_raille_b_l
+    100110: ms_raille_b_r
+    100112: ms_raille_f_l
+    100114: ms_raille_f_r
+    100116: ms_support_canon_l
+    100118: ms_support_canon_r
+    400000: //RootNode
+    400002: ms_colonne_ver
+    400004: ms_coque_robot
+    400006: ms_cote_1
+    400008: ms_cote_2
+    400010: ms_cote_3
+    400012: ms_cuisse_l
+    400014: ms_cuisse_r
+    400016: ms_doigt_cent_l_1
+    400018: ms_doigt_cent_l_2
+    400020: ms_doigt_cent_r_1
+    400022: ms_doigt_cent_r_2
+    400024: ms_doigt_l_1
+    400026: ms_doigt_l_1 1
+    400028: ms_doigt_l_2
+    400030: ms_doigt_l_2 1
+    400032: ms_doigt_r_1
+    400034: ms_doigt_r_1 1
+    400036: ms_doigt_r_2
+    400038: ms_doigt_r_2 1
+    400040: ms_door_b_l
+    400042: ms_door_b_r
+    400044: ms_door_f_l
+    400046: ms_door_f_r
+    400048: ms_genou_l
+    400050: ms_genou_r
+    400052: ms_hanche_l_1
+    400054: ms_hanche_l_2
+    400056: ms_hanche_l_3
+    400058: ms_hanche_l_4
+    400060: ms_hanche_pelvis_1_l
+    400062: ms_hanche_pelvis_1_r
+    400064: ms_hanche_pelvis_2_l
+    400066: ms_hanche_pelvis_2_r
+    400068: ms_hanche_r_1
+    400070: ms_hanche_r_2
+    400072: ms_hanche_r_3
+    400074: ms_hanche_r_4
+    400076: ms_Object002
+    400078: ms_Object015
+    400080: ms_pelvis
+    400082: ms_pelvis_1
+    400084: ms_pelvis_2
+    400086: ms_phare_robot
+    400088: ms_pied_l
+    400090: ms_pied_r
+    400092: ms_protec_doigt_cent_l
+    400094: ms_protec_doigt_cent_r
+    400096: ms_protec_doigt_l
+    400098: ms_protec_doigt_l 1
+    400100: ms_protec_doigt_r
+    400102: ms_protec_doigt_r 1
+    400104: ms_protec_pied_l
+    400106: ms_protec_pied_r
+    400108: ms_raille_b_l
+    400110: ms_raille_b_r
+    400112: ms_raille_f_l
+    400114: ms_raille_f_r
+    400116: ms_support_canon_l
+    400118: ms_support_canon_r
+    2300000: ms_colonne_ver
+    2300002: ms_coque_robot
+    2300004: ms_cote_1
+    2300006: ms_cote_2
+    2300008: ms_cote_3
+    2300010: ms_cuisse_l
+    2300012: ms_cuisse_r
+    2300014: ms_doigt_cent_l_1
+    2300016: ms_doigt_cent_l_2
+    2300018: ms_doigt_cent_r_1
+    2300020: ms_doigt_cent_r_2
+    2300022: ms_doigt_l_1
+    2300024: ms_doigt_l_1 1
+    2300026: ms_doigt_l_2
+    2300028: ms_doigt_l_2 1
+    2300030: ms_doigt_r_1
+    2300032: ms_doigt_r_1 1
+    2300034: ms_doigt_r_2
+    2300036: ms_doigt_r_2 1
+    2300038: ms_door_b_l
+    2300040: ms_door_b_r
+    2300042: ms_door_f_l
+    2300044: ms_door_f_r
+    2300046: ms_genou_l
+    2300048: ms_genou_r
+    2300050: ms_hanche_l_1
+    2300052: ms_hanche_l_2
+    2300054: ms_hanche_l_3
+    2300056: ms_hanche_l_4
+    2300058: ms_hanche_pelvis_1_l
+    2300060: ms_hanche_pelvis_1_r
+    2300062: ms_hanche_pelvis_2_l
+    2300064: ms_hanche_pelvis_2_r
+    2300066: ms_hanche_r_1
+    2300068: ms_hanche_r_2
+    2300070: ms_hanche_r_3
+    2300072: ms_hanche_r_4
+    2300074: ms_pelvis
+    2300076: ms_pelvis_1
+    2300078: ms_pelvis_2
+    2300080: ms_phare_robot
+    2300082: ms_pied_l
+    2300084: ms_pied_r
+    2300086: ms_protec_doigt_cent_l
+    2300088: ms_protec_doigt_cent_r
+    2300090: ms_protec_doigt_l
+    2300092: ms_protec_doigt_l 1
+    2300094: ms_protec_doigt_r
+    2300096: ms_protec_doigt_r 1
+    2300098: ms_protec_pied_l
+    2300100: ms_protec_pied_r
+    2300102: ms_raille_b_l
+    2300104: ms_raille_b_r
+    2300106: ms_raille_f_l
+    2300108: ms_raille_f_r
+    2300110: ms_support_canon_l
+    2300112: ms_support_canon_r
+    3300000: ms_colonne_ver
+    3300002: ms_coque_robot
+    3300004: ms_cote_1
+    3300006: ms_cote_2
+    3300008: ms_cote_3
+    3300010: ms_cuisse_l
+    3300012: ms_cuisse_r
+    3300014: ms_doigt_cent_l_1
+    3300016: ms_doigt_cent_l_2
+    3300018: ms_doigt_cent_r_1
+    3300020: ms_doigt_cent_r_2
+    3300022: ms_doigt_l_1
+    3300024: ms_doigt_l_1 1
+    3300026: ms_doigt_l_2
+    3300028: ms_doigt_l_2 1
+    3300030: ms_doigt_r_1
+    3300032: ms_doigt_r_1 1
+    3300034: ms_doigt_r_2
+    3300036: ms_doigt_r_2 1
+    3300038: ms_door_b_l
+    3300040: ms_door_b_r
+    3300042: ms_door_f_l
+    3300044: ms_door_f_r
+    3300046: ms_genou_l
+    3300048: ms_genou_r
+    3300050: ms_hanche_l_1
+    3300052: ms_hanche_l_2
+    3300054: ms_hanche_l_3
+    3300056: ms_hanche_l_4
+    3300058: ms_hanche_pelvis_1_l
+    3300060: ms_hanche_pelvis_1_r
+    3300062: ms_hanche_pelvis_2_l
+    3300064: ms_hanche_pelvis_2_r
+    3300066: ms_hanche_r_1
+    3300068: ms_hanche_r_2
+    3300070: ms_hanche_r_3
+    3300072: ms_hanche_r_4
+    3300074: ms_pelvis
+    3300076: ms_pelvis_1
+    3300078: ms_pelvis_2
+    3300080: ms_phare_robot
+    3300082: ms_pied_l
+    3300084: ms_pied_r
+    3300086: ms_protec_doigt_cent_l
+    3300088: ms_protec_doigt_cent_r
+    3300090: ms_protec_doigt_l
+    3300092: ms_protec_doigt_l 1
+    3300094: ms_protec_doigt_r
+    3300096: ms_protec_doigt_r 1
+    3300098: ms_protec_pied_l
+    3300100: ms_protec_pied_r
+    3300102: ms_raille_b_l
+    3300104: ms_raille_b_r
+    3300106: ms_raille_f_l
+    3300108: ms_raille_f_r
+    3300110: ms_support_canon_l
+    3300112: ms_support_canon_r
+    4300000: ms_pelvis_1
+    4300002: ms_pelvis_2
+    4300004: ms_pelvis
+    4300006: ms_colonne_ver
+    4300008: ms_cote_1
+    4300010: ms_cote_2
+    4300012: ms_cote_3
+    4300014: ms_coque_robot
+    4300016: ms_raille_f_l
+    4300018: ms_raille_f_r
+    4300020: ms_raille_b_r
+    4300022: ms_raille_b_l
+    4300024: ms_support_canon_l
+    4300026: ms_support_canon_r
+    4300028: ms_phare_robot
+    4300030: ms_door_f_r
+    4300032: ms_door_b_l
+    4300034: ms_door_b_r
+    4300036: ms_door_f_l
+    4300038: ms_hanche_pelvis_1_l
+    4300040: ms_hanche_pelvis_2_l
+    4300042: ms_hanche_l_1
+    4300044: ms_cuisse_l
+    4300046: ms_genou_l
+    4300048: ms_pied_l
+    4300050: ms_protec_pied_l
+    4300052: ms_doigt_l_1
+    4300054: ms_doigt_l_2
+    4300056: ms_protec_doigt_l
+    4300058: ms_doigt_cent_l_1
+    4300060: ms_doigt_cent_l_2
+    4300062: ms_protec_doigt_cent_l
+    4300064: ms_doigt_l_1
+    4300066: ms_doigt_l_2
+    4300068: ms_protec_doigt_l
+    4300070: ms_hanche_l_2
+    4300072: ms_hanche_l_4
+    4300074: ms_hanche_l_3
+    4300076: ms_hanche_pelvis_1_r
+    4300078: ms_hanche_pelvis_2_r
+    4300080: ms_hanche_r_1
+    4300082: ms_cuisse_r
+    4300084: ms_genou_r
+    4300086: ms_pied_r
+    4300088: ms_doigt_r_1
+    4300090: ms_doigt_r_2
+    4300092: ms_protec_doigt_r
+    4300094: ms_doigt_cent_r_1
+    4300096: ms_doigt_cent_r_2
+    4300098: ms_protec_doigt_cent_r
+    4300100: ms_doigt_r_2
+    4300102: ms_protec_doigt_r
+    4300104: ms_doigt_r_1
+    4300106: ms_protec_pied_r
+    4300108: ms_hanche_r_4
+    4300110: ms_hanche_r_3
+    4300112: ms_hanche_r_2
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: -10
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ms_Object002
+        weight: 1
+      - path: ms_Object015
+        weight: 1
+      - path: ms_pelvis_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1/ms_doigt_cent_l_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1/ms_doigt_cent_l_2/ms_protec_doigt_cent_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1/ms_doigt_l_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1/ms_doigt_l_2/ms_protec_doigt_l
+          1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1/ms_doigt_l_2 1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1/ms_doigt_l_2 1/ms_protec_doigt_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_protec_pied_l
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_3
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_4
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_cent_r_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_cent_r_2/ms_protec_doigt_cent_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_r_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_r_2/ms_protec_doigt_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1/ms_doigt_r_2
+          1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1/ms_doigt_r_2
+          1/ms_protec_doigt_r 1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1
+          1
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_protec_pied_r
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_hanche_r_2
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_hanche_r_3
+        weight: 1
+      - path: ms_pelvis_1/ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_hanche_r_1/ms_hanche_r_4
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_b_l
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_b_r
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_f_l
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_f_r
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_phare_robot
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_b_l
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_b_r
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_f_l
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_f_r
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_support_canon_l
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_support_canon_r
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_1
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_2
+        weight: 1
+      - path: ms_pelvis_1/ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
