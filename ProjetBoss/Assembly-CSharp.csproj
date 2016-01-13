@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\papaScript.cs" />
      <Compile Include="Assets\Scripts\zoneScript.cs" />
      <Compile Include="Assets\SoundManager.cs" />
+     <Compile Include="Assets\UIStartScript.cs" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
