@@ -1,0 +1,943 @@
+fileFormatVersion: 2
+guid: 6a3a79844c1b1664487eb4fc94186423
+timeCreated: 1452636067
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ms_colonne_ver
+    100004: ms_coque_robot
+    100006: ms_cote_1
+    100008: ms_cote_2
+    100010: ms_cote_3
+    100012: ms_cuisse_l
+    100014: ms_cuisse_r
+    100016: ms_doigt_cent_l_1
+    100018: ms_doigt_cent_l_2
+    100020: ms_doigt_cent_r_1
+    100022: ms_doigt_cent_r_2
+    100024: ms_doigt_l_1
+    100026: ms_doigt_l_1 1
+    100028: ms_doigt_l_2
+    100030: ms_doigt_l_2 1
+    100032: ms_doigt_r_1
+    100034: ms_doigt_r_1 1
+    100036: ms_doigt_r_2
+    100038: ms_doigt_r_2 1
+    100040: ms_door_b_l
+    100042: ms_door_b_r
+    100044: ms_door_f_l
+    100046: ms_door_f_r
+    100048: ms_genou_l
+    100050: ms_genou_r
+    100052: ms_hanche_l_1
+    100054: ms_hanche_l_2
+    100056: ms_hanche_l_3
+    100058: ms_hanche_l_4
+    100060: ms_hanche_pelvis_1_l
+    100062: ms_hanche_pelvis_1_r
+    100064: ms_hanche_pelvis_2_l
+    100066: ms_hanche_pelvis_2_r
+    100068: ms_hanche_r_2
+    100070: ms_hanche_r_3
+    100072: ms_hanche_r_4
+    100074: ms_ms_support_canon_r
+    100076: ms_pelvis
+    100078: ms_pelvis_2
+    100080: ms_phare_robot
+    100082: ms_pied_l
+    100084: ms_pied_r
+    100086: ms_protec_doigt_cent_l
+    100088: ms_protec_doigt_cent_l 1
+    100090: ms_protec_doigt_l
+    100092: ms_protec_doigt_l 1
+    100094: ms_protec_doigt_r
+    100096: ms_protec_doigt_r 1
+    100098: ms_protec_pied_l
+    100100: ms_protec_pied_r
+    100102: ms_raille_b_l
+    100104: ms_raille_b_r
+    100106: ms_raille_f_l
+    100108: ms_raille_f_r
+    100110: ms_Sphere007
+    100112: ms_support_canon_l
+    400000: //RootNode
+    400002: ms_colonne_ver
+    400004: ms_coque_robot
+    400006: ms_cote_1
+    400008: ms_cote_2
+    400010: ms_cote_3
+    400012: ms_cuisse_l
+    400014: ms_cuisse_r
+    400016: ms_doigt_cent_l_1
+    400018: ms_doigt_cent_l_2
+    400020: ms_doigt_cent_r_1
+    400022: ms_doigt_cent_r_2
+    400024: ms_doigt_l_1
+    400026: ms_doigt_l_1 1
+    400028: ms_doigt_l_2
+    400030: ms_doigt_l_2 1
+    400032: ms_doigt_r_1
+    400034: ms_doigt_r_1 1
+    400036: ms_doigt_r_2
+    400038: ms_doigt_r_2 1
+    400040: ms_door_b_l
+    400042: ms_door_b_r
+    400044: ms_door_f_l
+    400046: ms_door_f_r
+    400048: ms_genou_l
+    400050: ms_genou_r
+    400052: ms_hanche_l_1
+    400054: ms_hanche_l_2
+    400056: ms_hanche_l_3
+    400058: ms_hanche_l_4
+    400060: ms_hanche_pelvis_1_l
+    400062: ms_hanche_pelvis_1_r
+    400064: ms_hanche_pelvis_2_l
+    400066: ms_hanche_pelvis_2_r
+    400068: ms_hanche_r_2
+    400070: ms_hanche_r_3
+    400072: ms_hanche_r_4
+    400074: ms_ms_support_canon_r
+    400076: ms_pelvis
+    400078: ms_pelvis_2
+    400080: ms_phare_robot
+    400082: ms_pied_l
+    400084: ms_pied_r
+    400086: ms_protec_doigt_cent_l
+    400088: ms_protec_doigt_cent_l 1
+    400090: ms_protec_doigt_l
+    400092: ms_protec_doigt_l 1
+    400094: ms_protec_doigt_r
+    400096: ms_protec_doigt_r 1
+    400098: ms_protec_pied_l
+    400100: ms_protec_pied_r
+    400102: ms_raille_b_l
+    400104: ms_raille_b_r
+    400106: ms_raille_f_l
+    400108: ms_raille_f_r
+    400110: ms_Sphere007
+    400112: ms_support_canon_l
+    2300000: //RootNode
+    2300002: ms_colonne_ver
+    2300004: ms_coque_robot
+    2300006: ms_cote_1
+    2300008: ms_cote_2
+    2300010: ms_cote_3
+    2300012: ms_cuisse_l
+    2300014: ms_cuisse_r
+    2300016: ms_doigt_cent_l_1
+    2300018: ms_doigt_cent_l_2
+    2300020: ms_doigt_cent_r_1
+    2300022: ms_doigt_cent_r_2
+    2300024: ms_doigt_l_1
+    2300026: ms_doigt_l_1 1
+    2300028: ms_doigt_l_2
+    2300030: ms_doigt_l_2 1
+    2300032: ms_doigt_r_1
+    2300034: ms_doigt_r_1 1
+    2300036: ms_doigt_r_2
+    2300038: ms_doigt_r_2 1
+    2300040: ms_door_b_l
+    2300042: ms_door_b_r
+    2300044: ms_door_f_l
+    2300046: ms_door_f_r
+    2300048: ms_genou_l
+    2300050: ms_genou_r
+    2300052: ms_hanche_l_1
+    2300054: ms_hanche_l_2
+    2300056: ms_hanche_l_3
+    2300058: ms_hanche_l_4
+    2300060: ms_hanche_pelvis_1_l
+    2300062: ms_hanche_pelvis_1_r
+    2300064: ms_hanche_pelvis_2_l
+    2300066: ms_hanche_pelvis_2_r
+    2300068: ms_hanche_r_2
+    2300070: ms_hanche_r_3
+    2300072: ms_hanche_r_4
+    2300074: ms_ms_support_canon_r
+    2300076: ms_pelvis
+    2300078: ms_pelvis_2
+    2300080: ms_phare_robot
+    2300082: ms_pied_l
+    2300084: ms_pied_r
+    2300086: ms_protec_doigt_cent_l
+    2300088: ms_protec_doigt_cent_l 1
+    2300090: ms_protec_doigt_l
+    2300092: ms_protec_doigt_l 1
+    2300094: ms_protec_doigt_r
+    2300096: ms_protec_doigt_r 1
+    2300098: ms_protec_pied_l
+    2300100: ms_protec_pied_r
+    2300102: ms_raille_b_l
+    2300104: ms_raille_b_r
+    2300106: ms_raille_f_l
+    2300108: ms_raille_f_r
+    2300110: ms_Sphere007
+    2300112: ms_support_canon_l
+    3300000: //RootNode
+    3300002: ms_colonne_ver
+    3300004: ms_coque_robot
+    3300006: ms_cote_1
+    3300008: ms_cote_2
+    3300010: ms_cote_3
+    3300012: ms_cuisse_l
+    3300014: ms_cuisse_r
+    3300016: ms_doigt_cent_l_1
+    3300018: ms_doigt_cent_l_2
+    3300020: ms_doigt_cent_r_1
+    3300022: ms_doigt_cent_r_2
+    3300024: ms_doigt_l_1
+    3300026: ms_doigt_l_1 1
+    3300028: ms_doigt_l_2
+    3300030: ms_doigt_l_2 1
+    3300032: ms_doigt_r_1
+    3300034: ms_doigt_r_1 1
+    3300036: ms_doigt_r_2
+    3300038: ms_doigt_r_2 1
+    3300040: ms_door_b_l
+    3300042: ms_door_b_r
+    3300044: ms_door_f_l
+    3300046: ms_door_f_r
+    3300048: ms_genou_l
+    3300050: ms_genou_r
+    3300052: ms_hanche_l_1
+    3300054: ms_hanche_l_2
+    3300056: ms_hanche_l_3
+    3300058: ms_hanche_l_4
+    3300060: ms_hanche_pelvis_1_l
+    3300062: ms_hanche_pelvis_1_r
+    3300064: ms_hanche_pelvis_2_l
+    3300066: ms_hanche_pelvis_2_r
+    3300068: ms_hanche_r_2
+    3300070: ms_hanche_r_3
+    3300072: ms_hanche_r_4
+    3300074: ms_ms_support_canon_r
+    3300076: ms_pelvis
+    3300078: ms_pelvis_2
+    3300080: ms_phare_robot
+    3300082: ms_pied_l
+    3300084: ms_pied_r
+    3300086: ms_protec_doigt_cent_l
+    3300088: ms_protec_doigt_cent_l 1
+    3300090: ms_protec_doigt_l
+    3300092: ms_protec_doigt_l 1
+    3300094: ms_protec_doigt_r
+    3300096: ms_protec_doigt_r 1
+    3300098: ms_protec_pied_l
+    3300100: ms_protec_pied_r
+    3300102: ms_raille_b_l
+    3300104: ms_raille_b_r
+    3300106: ms_raille_f_l
+    3300108: ms_raille_f_r
+    3300110: ms_Sphere007
+    3300112: ms_support_canon_l
+    4300000: ms_pelvis_1
+    4300002: ms_pelvis_2
+    4300004: ms_pelvis
+    4300006: ms_colonne_ver
+    4300008: ms_cote_1
+    4300010: ms_cote_2
+    4300012: ms_cote_3
+    4300014: ms_coque_robot
+    4300016: ms_raille_f_l
+    4300018: ms_raille_f_r
+    4300020: ms_raille_b_r
+    4300022: ms_raille_b_l
+    4300024: ms_support_canon_l
+    4300026: ms_ms_support_canon_r
+    4300028: ms_phare_robot
+    4300030: ms_door_f_r
+    4300032: ms_door_b_l
+    4300034: ms_door_b_r
+    4300036: ms_door_f_l
+    4300038: ms_hanche_pelvis_1_l
+    4300040: ms_hanche_pelvis_2_l
+    4300042: ms_hanche_l_1
+    4300044: ms_cuisse_l
+    4300046: ms_genou_l
+    4300048: ms_pied_l
+    4300050: ms_protec_pied_l
+    4300052: ms_doigt_l_1
+    4300054: ms_doigt_l_2
+    4300056: ms_protec_doigt_l
+    4300058: ms_doigt_cent_l_1
+    4300060: ms_doigt_cent_l_2
+    4300062: ms_protec_doigt_cent_l
+    4300064: ms_doigt_l_1
+    4300066: ms_doigt_l_2
+    4300068: ms_protec_doigt_l
+    4300070: ms_hanche_l_2
+    4300072: ms_hanche_l_4
+    4300074: ms_hanche_l_3
+    4300076: ms_hanche_pelvis_1_r
+    4300078: ms_hanche_pelvis_2_r
+    4300080: ms_Sphere007
+    4300082: ms_cuisse_r
+    4300084: ms_genou_r
+    4300086: ms_pied_r
+    4300088: ms_doigt_r_1
+    4300090: ms_doigt_r_2
+    4300092: ms_protec_doigt_r
+    4300094: ms_doigt_cent_r_1
+    4300096: ms_doigt_cent_r_2
+    4300098: ms_protec_doigt_cent_l
+    4300100: ms_doigt_r_2
+    4300102: ms_protec_doigt_r
+    4300104: ms_doigt_r_1
+    4300106: ms_protec_pied_r
+    4300108: ms_hanche_r_4
+    4300110: ms_hanche_r_3
+    4300112: ms_hanche_r_2
+    7400000: Marche
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Marche
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ms_hanche_pelvis_1_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1/ms_doigt_cent_l_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_cent_l_1/ms_doigt_cent_l_2/ms_protec_doigt_cent_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1/ms_doigt_l_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1/ms_doigt_l_2/ms_protec_doigt_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1/ms_doigt_l_2 1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_doigt_l_1
+          1/ms_doigt_l_2 1/ms_protec_doigt_l 1
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_cuisse_l/ms_genou_l/ms_pied_l/ms_protec_pied_l
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_3
+        weight: 1
+      - path: ms_hanche_pelvis_1_l/ms_hanche_pelvis_2_l/ms_hanche_l_1/ms_hanche_l_4
+        weight: 1
+      - path: ms_hanche_pelvis_1_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_cent_r_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_cent_r_2/ms_protec_doigt_cent_l
+          1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_r_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_cent_r_1/ms_doigt_r_2/ms_protec_doigt_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1/ms_doigt_r_2
+          1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1/ms_doigt_r_2
+          1/ms_protec_doigt_r 1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_doigt_r_1
+          1
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_cuisse_r/ms_genou_r/ms_pied_r/ms_protec_pied_r
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_hanche_r_2
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_hanche_r_3
+        weight: 1
+      - path: ms_hanche_pelvis_1_r/ms_hanche_pelvis_2_r/ms_Sphere007/ms_hanche_r_4
+        weight: 1
+      - path: ms_pelvis_2
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_b_l
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_b_r
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_f_l
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_door_f_r
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_ms_support_canon_r
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_phare_robot
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_b_l
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_b_r
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_f_l
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_raille_f_r
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_coque_robot/ms_support_canon_l
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_1
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_2
+        weight: 1
+      - path: ms_pelvis_2/ms_pelvis/ms_colonne_ver/ms_cote_3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: ms_Sphere007
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_cuisse_r
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_cuisse_r
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_genou_r
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_genou_r
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_cent_r_1
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_cent_r_1
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_cuisse_r
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_pied_r
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_r_1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_r_2 1
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_cent_l 1
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_cent_r_1
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_doigt_r_2
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_r
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_cent_l 1
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_r
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_r 1
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ms_protec_doigt_r 1
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: an_Walk(Clone)
+      position: {x: 1.58354947e-08, y: .922125816, z: .351637602}
+      rotation: {x: .512652993, y: -.487018377, z: .512653053, w: -.487018287}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_hanche_pelvis_1_l
+      position: {x: .000988388085, y: .00278491969, z: -.0986094251}
+      rotation: {x: .996905923, y: .00285507436, z: .0435260721, w: .0653908625}
+      scale: {x: .999999762, y: .999999702, z: 1.00000036}
+      transformModified: 1
+    - name: ms_hanche_pelvis_2_l
+      position: {x: -0, y: 1.14440915e-07, z: .00710761547}
+      rotation: {x: .454519153, y: -.541675508, z: .454519093, w: .541675568}
+      scale: {x: 1.00000048, y: 1.00000024, z: .999999821}
+      transformModified: 1
+    - name: ms_hanche_l_1
+      position: {x: .24004592, y: -.00111030578, z: -.000911827083}
+      rotation: {x: .975535631, y: -.0050579207, z: -.0209979732, w: .218778104}
+      scale: {x: 1.00000012, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: ms_cuisse_l
+      position: {x: -.00710721966, y: 6.5155029e-05, z: -6.59942634e-06}
+      rotation: {x: .0759208277, y: -.705532908, z: .0755970478, w: .700531542}
+      scale: {x: 1, y: 1.00000012, z: 1.00000048}
+      transformModified: 1
+    - name: ms_genou_l
+      position: {x: .474480033, y: -.0192839801, z: -.0441382788}
+      rotation: {x: -.0955446437, y: .0943983123, z: .295673817, w: .945799768}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_pied_l
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.0155814774, y: .017015554, z: .30527398, w: .951985002}
+      scale: {x: .999999881, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: ms_doigt_cent_l_1
+      position: {x: .469189703, y: -.015032501, z: 3.87573236e-05}
+      rotation: {x: .519944787, y: -.479105741, z: -.479077995, w: .520191669}
+      scale: {x: .99999851, y: 1.00000143, z: 1.00000012}
+      transformModified: 1
+    - name: ms_doigt_cent_l_2
+      position: {x: .102504045, y: -2.86102295e-06, z: -.00127113343}
+      rotation: {x: 2.625864e-06, y: -3.14414569e-06, z: -6.74383394e-09, w: 1}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_protec_doigt_cent_l
+      position: {x: .069707796, y: .000140647884, z: .0247145072}
+      rotation: {x: 0, y: 0, z: -4.65661287e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_doigt_l_1
+      position: {x: .465402752, y: .0308452975, z: -.0794142485}
+      rotation: {x: .704162538, y: -.0635789633, z: -.69674933, w: .121050306}
+      scale: {x: 1.00000155, y: .999998271, z: 1.00000012}
+      transformModified: 1
+    - name: ms_doigt_l_2
+      position: {x: .102504, y: -2.82287601e-06, z: -.00127182005}
+      rotation: {x: 6.9388939e-18, y: 1.86264515e-09, z: -3.7252903e-09, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_protec_doigt_l
+      position: {x: .0697076395, y: .000140647884, z: .0247151945}
+      rotation: {x: -4.61936366e-07, y: -4.664063e-06, z: -7.82332421e-08, w: 1}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: ms_doigt_l_1 1
+      position: {x: .465110242, y: .0348579027, z: .0879062787}
+      rotation: {x: .0903343484, y: -.70123291, z: -.0326245353, w: .706433117}
+      scale: {x: 1.00000191, y: .999998271, z: 1.00000012}
+      transformModified: 1
+    - name: ms_doigt_l_2 1
+      position: {x: .102503948, y: -2.82287601e-06, z: -.00127182005}
+      rotation: {x: 0, y: 0, z: -9.31322686e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_protec_doigt_l 1
+      position: {x: .0697077662, y: .000140304561, z: .0247145463}
+      rotation: {x: 5.23030621e-06, y: 4.8711031e-15, z: 9.31322686e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: ms_protec_pied_l
+      position: {x: .377162606, y: .211240649, z: -.000221710201}
+      rotation: {x: -.000110060711, y: .000132916684, z: .25881806, w: .965926111}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: ms_hanche_l_2
+      position: {x: -.0249537844, y: .0002292633, z: -2.25639342e-05}
+      rotation: {x: -.516518891, y: .483386308, z: .520459056, w: -.478192776}
+      scale: {x: 1.0000006, y: 1, z: .999999464}
+      transformModified: 1
+    - name: ms_hanche_l_3
+      position: {x: -.00218595495, y: 2.00653067e-05, z: -1.86920158e-06}
+      rotation: {x: .536885083, y: -.505628943, z: -.498877168, w: .455209136}
+      scale: {x: 1.00000024, y: 1.00000095, z: 1.00000048}
+      transformModified: 1
+    - name: ms_hanche_l_4
+      position: {x: .0358591266, y: -.000329055765, z: 3.26919544e-05}
+      rotation: {x: .556229711, y: -.526908994, z: -.476346999, w: .431357145}
+      scale: {x: .999999821, y: 1.00000036, z: .99999994}
+      transformModified: 1
+    - name: ms_hanche_pelvis_1_r
+      position: {x: .0016078949, y: .00186004629, z: .105633162}
+      rotation: {x: -.0118285064, y: .993292987, z: .0983547941, w: -.0596280694}
+      scale: {x: -.999999821, y: -.99999994, z: -1.00000048}
+      transformModified: 1
+    - name: ms_hanche_pelvis_2_r
+      position: {x: -0, y: 0, z: -1.90734859e-08}
+      rotation: {x: -.409447044, y: -.548881769, z: -.469833881, w: .557079911}
+      scale: {x: .99999994, y: .999999583, z: .999999583}
+      transformModified: 1
+    - name: ms_Sphere007
+      position: {x: .240002736, y: .00445556641, z: .00175060274}
+      rotation: {x: -.285775602, y: .0203186683, z: .0210711453, w: .957849383}
+      scale: {x: 1.00000012, y: .999999702, z: 1.00000048}
+      transformModified: 1
+    - name: ms_cuisse_r
+      position: {x: -.00710613234, y: -.000104980463, z: -.000103282924}
+      rotation: {x: -.641006351, y: .67004472, z: .352574736, w: .125864893}
+      scale: {x: 1.00000024, y: 1, z: 1.00000048}
+      transformModified: 1
+    - name: ms_genou_r
+      position: {x: .47652784, y: .0125660319, z: .0146250911}
+      rotation: {x: -.702885926, y: -.0558204763, z: -.0482173897, w: .707467675}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: ms_pied_r
+      position: {x: 8.01086401e-07, y: 2.40325926e-06, z: -7.62939436e-08}
+      rotation: {x: -.00518010557, y: .00289145112, z: -.0340611935, w: .999402165}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: ms_doigt_cent_r_1
+      position: {x: .469782203, y: -.0149325086, z: -6.82830796e-06}
+      rotation: {x: .503499329, y: -.455636084, z: -.417533487, w: .603779793}
+      scale: {x: 1.00000012, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: ms_doigt_cent_r_2
+      position: {x: .102503918, y: -2.82287601e-06, z: -.00127182005}
+      rotation: {x: -8.7544322e-08, y: 7.62324316e-15, z: -8.70786678e-08, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_protec_doigt_cent_l 1
+      position: {x: .0696976632, y: -.000144424441, z: .0247425716}
+      rotation: {x: 1.26246914e-05, y: 1, z: 4.21351288e-05, w: .000201196177}
+      scale: {x: -.999999046, y: -1.00000048, z: -1.00000119}
+      transformModified: 1
+    - name: ms_doigt_r_2
+      position: {x: -.0195273198, y: -.178452834, z: -.00127178663}
+      rotation: {x: .179565996, y: .0678129643, z: -.797226965, w: .572351813}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: ms_protec_doigt_r
+      position: {x: .06969776, y: -.000144503108, z: .0247425735}
+      rotation: {x: 1.26333143e-05, y: 1, z: 4.21006662e-05, w: .000201177565}
+      scale: {x: -.999999046, y: -1.00000048, z: -1.00000119}
+      transformModified: 1
+    - name: ms_doigt_r_1
+      position: {x: .465421438, y: .0349105075, z: .0878740847}
+      rotation: {x: -.0771747231, y: -.281310201, z: .193083107, w: .936817825}
+      scale: {x: .999999821, y: 1, z: .999999821}
+      transformModified: 1
+    - name: ms_doigt_r_2 1
+      position: {x: .102503978, y: -2.68936151e-06, z: -.00127180095}
+      rotation: {x: 0, y: 0, z: 6.75208867e-09, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_protec_doigt_r 1
+      position: {x: .0696977004, y: -.000144424441, z: .0247425605}
+      rotation: {x: 1.25558217e-05, y: 1, z: 4.1966563e-05, w: .00020092148}
+      scale: {x: -.999998987, y: -1.0000006, z: -1.00000131}
+      transformModified: 1
+    - name: ms_doigt_r_1 1
+      position: {x: .465768218, y: .0309467688, z: -.0794477835}
+      rotation: {x: .704416037, y: -.0616293922, z: -.696364045, w: .12278837}
+      scale: {x: .999999881, y: 1, z: .999999821}
+      transformModified: 1
+    - name: ms_protec_pied_r
+      position: {x: .377162248, y: .211242616, z: -.000220375063}
+      rotation: {x: -1.22022391e-06, y: -4.58571094e-07, z: .258821249, w: .965925217}
+      scale: {x: 1.00000036, y: .999999523, z: 1.00000083}
+      transformModified: 1
+    - name: ms_hanche_r_2
+      position: {x: -.0249498934, y: -.000368804933, z: -.000362472521}
+      rotation: {x: -.00729674706, y: -.712184012, z: .0175545327, w: .701735437}
+      scale: {x: 1.00000048, y: .999999762, z: 1}
+      transformModified: 1
+    - name: ms_hanche_r_3
+      position: {x: -.00218582153, y: -3.23486311e-05, z: -3.19290157e-05}
+      rotation: {x: .0233189818, y: -.710740626, z: .0486023091, w: .701385617}
+      scale: {x: 1.00000072, y: 1.00000036, z: 1.00000036}
+      transformModified: 1
+    - name: ms_hanche_r_4
+      position: {x: .0358528309, y: .000529327372, z: .000520381902}
+      rotation: {x: .0538909733, y: -.707943857, z: .0795582905, w: .69970119}
+      scale: {x: 1.00000036, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: ms_pelvis_2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 9.32587425e-15, y: -2.38418579e-07, z: 2.22346169e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_pelvis
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_colonne_ver
+      position: {x: -.0863943473, y: 0, z: 7.62939436e-08}
+      rotation: {x: 0, y: 2.98023252e-07, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_coque_robot
+      position: {x: -.252963036, y: .0121898269, z: 0}
+      rotation: {x: .0169307478, y: -.660244942, z: .0192480683, w: .750612795}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_door_b_l
+      position: {x: -1.90734859e-08, y: .452966034, z: .413317084}
+      rotation: {x: .0488841534, y: -.705414891, z: .70541513, w: -.0488841683}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: ms_door_b_r
+      position: {x: .000200748444, y: .4526079, z: .413317412}
+      rotation: {x: .706642747, y: .0256134402, z: .0256134383, w: .706642687}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: ms_door_f_l
+      position: {x: 1.90734859e-08, y: -.480315894, z: .413316488}
+      rotation: {x: 1.12084958e-18, y: -6.12474686e-35, z: -5.46437895e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_door_f_r
+      position: {x: 1.90734859e-08, y: -.480315894, z: .413316488}
+      rotation: {x: -.0277387034, y: .706562757, z: -.70656234, w: .0277385488}
+      scale: {x: 1.00000036, y: .999999881, z: 1.00000036}
+      transformModified: 1
+    - name: ms_ms_support_canon_r
+      position: {x: .134011313, y: -.390251964, z: .104342952}
+      rotation: {x: .757864296, y: -.290908992, z: .228109822, w: .537568271}
+      scale: {x: .999999762, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: ms_phare_robot
+      position: {x: -7.36236543e-05, y: -.343021572, z: .737514198}
+      rotation: {x: -.735273063, y: -.053855069, z: -.0724178329, w: .671735704}
+      scale: {x: 1, y: .999999702, z: 1.00000012}
+      transformModified: 1
+    - name: ms_raille_b_l
+      position: {x: -.328671187, y: .295694321, z: .413255006}
+      rotation: {x: 1.12084958e-18, y: -6.12474686e-35, z: -5.46437895e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_raille_b_r
+      position: {x: .328669965, y: .295694321, z: .413255006}
+      rotation: {x: 1, y: -5.46437895e-17, z: -2.38855584e-24, w: 4.37113883e-08}
+      scale: {x: -1, y: -1, z: -1}
+      transformModified: 1
+    - name: ms_raille_f_l
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 1.12084958e-18, y: -6.12474686e-35, z: -5.46437895e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_raille_f_r
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 1, y: -5.46437895e-17, z: -1.54166519e-23, w: 2.82130003e-07}
+      scale: {x: -1, y: -1, z: -1}
+      transformModified: 1
+    - name: ms_support_canon_l
+      position: {x: -.134009987, y: -.390251964, z: .104343109}
+      rotation: {x: -.537567914, y: .228109792, z: .290909082, w: .757864475}
+      scale: {x: -1.00000012, y: -.999999702, z: -.999999821}
+      transformModified: 1
+    - name: ms_cote_1
+      position: {x: -.0827646628, y: 3.81469718e-08, z: -1.90735037e-08}
+      rotation: {x: -.000184070333, y: .00696439389, z: .0264738537, w: .999625266}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_cote_2
+      position: {x: -.173369676, y: 0, z: -3.81469718e-08}
+      rotation: {x: -.000906285946, y: .0342902616, z: .0264588427, w: .999061227}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ms_cote_3
+      position: {x: -.264824599, y: 0, z: -1.59340736e-08}
+      rotation: {x: -.00115410879, y: .0436668843, z: .0264491215, w: .998695314}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
