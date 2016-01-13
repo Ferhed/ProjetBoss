@@ -13,6 +13,7 @@ public class BossController : MonoBehaviour {
     public States currentState = States.Idle;
 
     BossManager manager;
+    public GameObject xplosion;
 
     public int life = 100;
     private GameObject player;
@@ -71,6 +72,7 @@ public class BossController : MonoBehaviour {
 
         if (life <= 0)
         {
+            Badaboum(transform.position);
             manager.EndPhase1(gameObject);
         }
     }
@@ -81,6 +83,7 @@ public class BossController : MonoBehaviour {
     {
         if (life <= 0)
         {
+            Badaboum(transform.position);
             manager.EndPhase1(gameObject);
         }
 
@@ -191,10 +194,20 @@ public class BossController : MonoBehaviour {
         transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
+
+    void Badaboum(Vector3 position)
+    {
+        GameObject go = Instantiate(xplosion, position, Quaternion.identity) as GameObject;
+        ParticleSystem ps;
+        ps = go.GetComponent<ParticleSystem>();
+        ps.Play();
+    }
+
     void Phase3Behaviour()
     {
         if (life <= 0)
         {
+            Badaboum(transform.position);
             Destroy(gameObject);
         }
         else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
@@ -290,7 +303,7 @@ public class BossController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
         {
-            life = 0;
+            life -= 40;
             invincibilityStart = Time.time;
         }
     }

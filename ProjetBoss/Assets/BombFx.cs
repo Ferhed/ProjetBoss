@@ -5,7 +5,7 @@ public class BombFx : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Destroy(this, 1f);
+        Destroy(this, 2f);
 	}
 	
 	// Update is called once per frame

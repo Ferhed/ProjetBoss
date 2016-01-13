@@ -34,9 +34,9 @@ public class BossManager : MonoBehaviour {
 
         mapGenerator map = GameObject.Find("MapManager").GetComponent<mapGenerator>();
 
-        GameObject boss1 = Instantiate(bossPrefab, new Vector3(map.largeur/2-2f,5,map.longueur/2), Quaternion.identity) as GameObject;
+        GameObject boss1 = Instantiate(bossPrefab, new Vector3(3,3,22), Quaternion.identity) as GameObject;
         boss1.transform.localEulerAngles = new Vector3(0, 180, 0);
-        GameObject boss2 = Instantiate(bossPrefab, new Vector3(map.largeur / 2+2f, 5, map.longueur / 2), Quaternion.identity) as GameObject;
+        GameObject boss2 = Instantiate(bossPrefab, new Vector3(21,3,22), Quaternion.identity) as GameObject;
         boss2.transform.localEulerAngles = new Vector3(0, 180, 0);
 
         bosses[0] = boss1;
