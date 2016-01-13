@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BombFx.cs" />
      <Compile Include="Assets\PlayerLife.cs" />
      <Compile Include="Assets\ScriptBombColorMesh.cs" />
      <Compile Include="Assets\Scripts\BombScript.cs" />
@@ -56,6 +57,9 @@
      <Compile Include="Assets\Scripts\ExplScript.cs" />
      <Compile Include="Assets\Scripts\Interraction.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
+     <Compile Include="Assets\Scripts\Lazer.cs" />
+     <Compile Include="Assets\Scripts\LazerBall.cs" />
+     <Compile Include="Assets\Scripts\MenuEnd.cs" />
      <Compile Include="Assets\Scripts\PorteAscenseur.cs" />
      <Compile Include="Assets\Scripts\ScreenShakeScript.cs" />
      <Compile Include="Assets\Scripts\StartExpl.cs" />

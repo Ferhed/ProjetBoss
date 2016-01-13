@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BombScript : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class BombScript : MonoBehaviour {
 	float speed = 0.1f;
 	GameObject boss;
 	float distance = 0f;
+    public GameObject fxBomb;
 
 	// start modif
 	float height = 0f;
@@ -81,6 +83,7 @@ public class BombScript : MonoBehaviour {
                 int n = Random.Range(0, SoundManager.Instance.explosionsSounds.Length);
 
                 AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[n], transform.position, 1f);
+                Instantiate(fxBomb, transform.position+Vector3.up,Quaternion.identity);
 
                 if (playerInZone)
                 {
@@ -89,7 +92,8 @@ public class BombScript : MonoBehaviour {
 
 				if (!littleBomb)
 				{
-					Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
+                    Instantiate(expl, this.gameObject.transform.position, Quaternion.identity);
+
 				}
 				GameObject Cam = GameObject.FindGameObjectWithTag("MainCamera");
 				float distShake = Mathf.Cos(Vector3.Distance(this.gameObject.transform.position,Cam.transform.position)/20);
@@ -99,6 +103,10 @@ public class BombScript : MonoBehaviour {
 					Cam.GetComponent<ScreenShakeScript>().shakeAmount = distShake/2;
 					Cam.GetComponent<ScreenShakeScript>().shake = 0.8f;
 				}
+                GameObject go = Instantiate(fxBomb, this.gameObject.transform.position, Quaternion.identity) as GameObject;
+                ParticleSystem ps;
+                ps = go.GetComponent<ParticleSystem>();
+                ps.Play();
 				Destroy(this.gameObject);
 			}
 		}
