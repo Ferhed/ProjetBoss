@@ -38,7 +38,7 @@ public class BossController : MonoBehaviour {
 
         mapCenter = new Vector3(GameObject.Find("MapManager").GetComponent<mapGenerator>().largeur / 2f, transform.position.y, GameObject.Find("MapManager").GetComponent<mapGenerator>().longueur / 2f);
 
-        ChangeColor(Color.gray);
+        //ChangeColor(Color.gray);
     }
 
     PlayerLife playerLife;
@@ -68,6 +68,7 @@ public class BossController : MonoBehaviour {
 
     void IdleBehaviour()
     {
+
         if (life <= 0)
         {
             manager.EndPhase1(gameObject);
@@ -115,14 +116,14 @@ public class BossController : MonoBehaviour {
 
         charging = true;
 
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
         RaycastHit hit;
 
         bool canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
         while (canMove && charging && currentState == States.Phase1)
         {
-            ray = new Ray(transform.position, transform.forward);
+            ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
             canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
 
             if (!canMove)
@@ -216,21 +217,21 @@ public class BossController : MonoBehaviour {
         switch (currentState)
         {
             case States.Idle:
-                ChangeColor(Color.gray);
+                //ChangeColor(Color.gray);
                 break;
             case States.Phase1:
-                ChangeColor(Color.white);
+                //ChangeColor(Color.white);
                 break;
             case States.Phase2:
                 manager.StartPhase2();
-                ChangeColor(Color.yellow);
+                //ChangeColor(Color.yellow);
                 StartCoroutine(ReturnCenter());
                 break;
             case States.Phase3:
                 AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[0], transform.position, 3f);
                 manager.StartPhase3();
                 setLaser();
-                ChangeColor(Color.red);
+                //ChangeColor(Color.red);
                 break;
         }
     }
@@ -246,14 +247,14 @@ public class BossController : MonoBehaviour {
         }
     }
 
-    void ChangeColor(Color c)
+    /*void ChangeColor(Color c)
     {
         //Transform[] trans = gameObject.GetComponentsInChildren<Transform>();
         foreach(Transform t in gameObject.transform)
         {
             t.GetComponent<MeshRenderer>().material.color = c;
         }
-    }
+    }*/
 
     public States GetState()
     {
