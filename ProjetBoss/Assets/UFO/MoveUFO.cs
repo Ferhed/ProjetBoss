@@ -44,4 +44,13 @@ public class MoveUFO : MonoBehaviour {
 		this.gameObject.transform.position += move;
 		if (this.gameObject.transform.position.x > 100){Destroy(this.gameObject);}
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Projectile") 
+        {
+            GameObject.FindGameObjectWithTag("MapManager").GetComponent<mapGenerator>().UFOIsShot = true;
+        }
+    }
+
 }

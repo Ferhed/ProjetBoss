@@ -6,6 +6,7 @@ public class mapGenerator : MonoBehaviour {
 
     public GameObject tile;
 	public GameObject wall;
+    public bool UFOIsShot;
 
     public int longueur = 10;
     public int largeur = 10;
@@ -22,6 +23,7 @@ public class mapGenerator : MonoBehaviour {
     Vector3 tailleTile;
 
 	void Start () {
+        UFOIsShot = false;
 		saf = Resources.Load ("texture/wallsaf") as Texture;
 		timerColor = 0;
         tailleTile = tile.transform.localScale;
@@ -31,10 +33,11 @@ public class mapGenerator : MonoBehaviour {
 	
 	void Update () {
 		timerColor--;
-		if (Input.GetKey(KeyCode.Keypad5) && timerColor < 0)
+		if ((/*Input.GetKey(KeyCode.Keypad5) ||*/ UFOIsShot) && timerColor < 0)
 		{
 			timerColor = timeColorMax;
 			isColored = !isColored;
+            UFOIsShot = false;
 		}
 	}
 

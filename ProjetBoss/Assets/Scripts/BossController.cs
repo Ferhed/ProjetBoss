@@ -61,6 +61,9 @@ public class BossController : MonoBehaviour {
     }
     // Update is called once per frame
     void FixedUpdate () {
+
+
+
         switch (currentState)
         {
             case States.Idle:
@@ -125,6 +128,7 @@ public class BossController : MonoBehaviour {
             StartCoroutine(ChargeCoroutine());
         }
     }
+
 
     IEnumerator ChargeCoroutine()
     {
@@ -212,7 +216,7 @@ public class BossController : MonoBehaviour {
         }
         else if(Vector3.Distance(this.transform.position,player.transform.position) < minPlayerDistance)
         {
-            playerLife.Die();
+            //playerLife.Die();
         }
 
         if(isTourbiloling)
@@ -241,7 +245,7 @@ public class BossController : MonoBehaviour {
         }
         else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
         {
-            playerLife.Die();
+            //playerLife.Die();
         }
 
         if (isTourbiloling)

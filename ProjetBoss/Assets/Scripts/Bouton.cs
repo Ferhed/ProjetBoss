@@ -28,7 +28,7 @@ public class Bouton : MonoBehaviour {
         {
             var height = (Mathf.Sin(Mathf.PI * timer) + 2);
             timer += Time.deltaTime;
-            light.intensity = height;
+            light.intensity = height*2;
         }
 	}
 	public void utiliserBouton()
