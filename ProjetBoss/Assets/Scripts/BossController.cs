@@ -15,13 +15,19 @@ public class BossController : MonoBehaviour {
     BossManager manager;
     public GameObject xplosion;
 
+    public float vitesseRotation = 50f;
     public int life = 100;
     private GameObject player;
     public float speed = 5f;
     public float chargeSpeedMultiplicator = 20f;
+    public GameObject laser;
+    public GameObject laserRear;
+    public GameObject axeRotation;
+    public GameObject[] elementToRotate;
 
     public float invincibilityDelay = 2f;
     float invincibilityStart = 0f;
+    Animator animateur;
 
     [HideInInspector]public bool charging = false;
     [HideInInspector]public bool hasCharged = false;
@@ -31,6 +37,7 @@ public class BossController : MonoBehaviour {
     public float minPlayerDistance = 1f;
 
     private bool otherBossKilled = false;
+    bool isTourbiloling = false;
 
     // Use this for initialization
     void Awake () {
@@ -38,6 +45,7 @@ public class BossController : MonoBehaviour {
         manager = GameObject.Find("BossManager").GetComponent<BossManager>();
 
         mapCenter = new Vector3(GameObject.Find("MapManager").GetComponent<mapGenerator>().largeur / 2f, transform.position.y, GameObject.Find("MapManager").GetComponent<mapGenerator>().longueur / 2f);
+        animateur = gameObject.GetComponentInChildren<Animator>();
 
         //ChangeColor(Color.gray);
     }
@@ -49,7 +57,7 @@ public class BossController : MonoBehaviour {
         playerLife = FindObjectOfType<PlayerLife>();
     }
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         switch (currentState)
         {
             case States.Idle:
@@ -65,6 +73,8 @@ public class BossController : MonoBehaviour {
                 Phase3Behaviour();
                 break;
         }
+
+        Debug.DrawLine(elementToRotate[2].transform.position, elementToRotate[2].transform.position + elementToRotate[2].transform.forward, Color.red);
     }
 
     void IdleBehaviour()
@@ -191,7 +201,8 @@ public class BossController : MonoBehaviour {
             playerLife.Die();
         }
 
-        transform.Rotate(0, 50 * Time.deltaTime, 0);
+        if(isTourbiloling)
+            axeRotation.transform.Rotate(0, vitesseRotation * Time.deltaTime, 0);
     }
 
 
@@ -215,8 +226,10 @@ public class BossController : MonoBehaviour {
             playerLife.Die();
         }
 
-        transform.Rotate(0, 50 * Time.deltaTime, 0);
+        if (isTourbiloling)
+            axeRotation.transform.Rotate(0, vitesseRotation*Time.deltaTime, 0);
     }
+
 
     public void SwitchState(States s)
     {
@@ -251,12 +264,31 @@ public class BossController : MonoBehaviour {
 
     void setLaser()
     {
-        transform.Find("Laser").gameObject.SetActive(true);
+        if (animateur.GetBool("isCrouching") == false)
+        {
+            animateur.SetBool("isCrouching", true);
+            animateur.SetTrigger("exitLaser");
+        }
+        Invoke("GoTourbilol", 2);
+    }
+
+    void GoTourbilol()
+    {
+        animateur.SetTrigger("isTourbiloling");
+        isTourbiloling = true;
+        Invoke("GoLaser", 1.5f);
+    }
+
+    void GoLaser()
+    {
+        laser.SetActive(true);
+        laser.GetComponent<Lazer>().Actionned();
 
         if (currentState == States.Phase3)
         {
             //Debug.Log("laser");
-            transform.Find("LaserRear").gameObject.SetActive(true);
+            laserRear.SetActive(true);
+            laserRear.GetComponent<Lazer>().Actionned();
         }
     }
 

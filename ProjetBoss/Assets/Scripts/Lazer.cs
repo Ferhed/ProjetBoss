@@ -42,6 +42,16 @@ public class Lazer : MonoBehaviour
     {
         RenderLaser();
     }
+    public void Actionned()
+    {
+        float ratio = 0;
+        while (ratio < 1)
+        {
+            ratio += Time.deltaTime/4;
+            gameObject.transform.localScale = new Vector3(ratio / 10 * 7, ratio / 10 * 7, 0.7f);
+        }
+        gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+    }
 
     void RenderLaser()
     {

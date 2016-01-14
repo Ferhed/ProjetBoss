@@ -21,13 +21,29 @@ public class UIManager : MonoBehaviour {
 	public GameObject panel;
 	public Text text;
 	public GameObject player;
+    public Image darkScreen;
 	FirstPersonController controller;
 
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 		controller = player.GetComponent<FirstPersonController> ();
+
+        
 	}
+
+    void Update()
+    {
+        if (darkScreen.color.a > 0)
+        {
+            Debug.Log("yolo");
+            darkScreen.color = new Color(darkScreen.color.r, darkScreen.color.g, darkScreen.color.b, darkScreen.color.a - 0.025f);
+        }
+        else
+        {
+            darkScreen.enabled = false;
+        }
+    }
 
 	public void launchUI(string word , int percent)
 	{

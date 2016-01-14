@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class BombScript : MonoBehaviour {
 
     public GameObject expl;
-    public int timerMax;
-    public int timer;
-	public int diffTime;
+    public float timerMax = 5f;
+    public float timer;
+	public float diffTime;
 
 	float limitDeath = 1000f;
 	float speed = 0.1f;
@@ -33,12 +33,13 @@ public class BombScript : MonoBehaviour {
     PlayerLife playerLife;
 
 	void Start () {
+        Debug.Log(startPos.y);
         playerLife = FindObjectOfType<PlayerLife>();
         boss = GameObject.FindGameObjectWithTag ("Boss");
 		endPos = this.gameObject.transform.position;
 		this.gameObject.transform.position = startPos;
         timer = timerMax;
-		int rand = Random.Range (0, diffTime);
+		float rand = Random.Range (0, diffTime);
 		if (Random.Range (0, 2) == 1){rand *= -1;}
 		timer += rand;
 	}
@@ -54,9 +55,6 @@ public class BombScript : MonoBehaviour {
 		limitDeath--;
 		if (limitDeath<0){Destroy(this.gameObject);}
 
-		//float dist = Vector3.Distance(this.gameObject.transform.position, endPos);
-		//if (dist > 0.5f && !isActivated)
-
 		distance = Vector3.Distance(this.gameObject.transform.position, endPos);
 		if (distance > 0.5f && !isActivated)
 		{
@@ -65,7 +63,6 @@ public class BombScript : MonoBehaviour {
 			timerThrow += Time.deltaTime /(distance/10f);
             if (!isActivated) { this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; }
 
-			//end modif
 		}
 		else
 		{
@@ -77,8 +74,8 @@ public class BombScript : MonoBehaviour {
 		if (isActivated) 
 		{
 			if(boss){Physics.IgnoreCollision(boss.GetComponent<Collider>(), this.gameObject.GetComponent<Collider>(), false);}
-			timer--;
-			if (timer<0)
+			timer-= Time.deltaTime;
+			if (timer<=0)
 			{
                 int n = Random.Range(0, SoundManager.Instance.explosionsSounds.Length);
 
