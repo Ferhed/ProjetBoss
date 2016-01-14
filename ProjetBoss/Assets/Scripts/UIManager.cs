@@ -24,25 +24,46 @@ public class UIManager : MonoBehaviour {
     public Image darkScreen;
 	FirstPersonController controller;
 
+    bool start;
+    bool end;
+
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 		controller = player.GetComponent<FirstPersonController> ();
-
-        
+        start = true;
+        end = false;
 	}
+
 
     void Update()
     {
-        if (darkScreen.color.a > 0)
+        if (start)
         {
-            Debug.Log("yolo");
-            darkScreen.color = new Color(darkScreen.color.r, darkScreen.color.g, darkScreen.color.b, darkScreen.color.a - 0.025f);
+            if (darkScreen.color.a > 0)
+            {
+                darkScreen.color = new Color(darkScreen.color.r, darkScreen.color.g, darkScreen.color.b, darkScreen.color.a - 0.025f);
+            }
+            else
+            {
+                //darkScreen.enabled = false;
+                start = false;
+            }
         }
-        else
+        if (end)
         {
-            darkScreen.enabled = false;
+            if (darkScreen.color.a < 1)
+            {
+                darkScreen.color = new Color(darkScreen.color.r, darkScreen.color.g, darkScreen.color.b, darkScreen.color.a + 0.025f);
+            }
+            else
+            {
+                //darkScreen.enabled = false;
+                end = false;
+                Application.LoadLevel("menu");
+            }
         }
+
     }
 
 	public void launchUI(string word , int percent)
@@ -74,7 +95,6 @@ public class UIManager : MonoBehaviour {
 
         while (currentColor < 1)
         {
-            //Debug.Log(currentColor);
             currentColor += 0.05f;
             panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
             text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);
@@ -82,7 +102,42 @@ public class UIManager : MonoBehaviour {
             yield return new WaitForSeconds(0.001f);
         }
 
-        Time.timeScale = 0;
+        yield return new WaitForSeconds(2f);
+        end = true;
+    }
+
+    public void lauchWinUI()
+    {
+        StartCoroutine(UIWin());
+    }
+
+    IEnumerator UIWin()
+    {
+        controller.enabled = false;
+        Color colorPanel = panel.GetComponent<Image>().color;
+        text.text = "Congratulation !";
+        Color colorText = text.color;
+        float currentColor = 0;
+
+        colorPanel.r = 0;
+        colorPanel.g = 0;
+        colorPanel.b = 0;
+
+        colorText.r = 255;
+        colorText.g = 255;
+        colorText.b = 255;
+
+        while (currentColor < 1)
+        {
+            currentColor += 0.05f;
+            panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
+            text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);
+
+            yield return new WaitForSeconds(0.001f);
+        }
+
+        yield return new WaitForSeconds(2f);
+        end = true;
     }
 
 	IEnumerator UIAffichage(string word, int percent)
@@ -96,7 +151,6 @@ public class UIManager : MonoBehaviour {
 		float currentColor = 0;
 		while(currentColor < 1)
 		{
-			//Debug.Log(currentColor);
 			currentColor += 0.05f;
 			panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
 			text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);
@@ -107,7 +161,6 @@ public class UIManager : MonoBehaviour {
 
 		while (currentColor > 0)
 		{
-			//Debug.Log(currentColor);
 			currentColor -= 0.075f;
 			panel.GetComponent<Image>().color = new Color(colorPanel.r, colorPanel.g, colorPanel.b, currentColor / 2);
 			text.color = new Color(colorText.r, colorText.g, colorText.b, currentColor);

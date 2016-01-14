@@ -39,6 +39,8 @@ public class BossController : MonoBehaviour {
     private bool otherBossKilled = false;
     bool isTourbiloling = false;
 
+    public Transform finder;
+
     // Use this for initialization
     void Awake () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -55,6 +57,7 @@ public class BossController : MonoBehaviour {
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
+        animateur.SetTrigger("isCharging");
     }
     // Update is called once per frame
     void FixedUpdate () {
@@ -73,8 +76,6 @@ public class BossController : MonoBehaviour {
                 Phase3Behaviour();
                 break;
         }
-
-        Debug.DrawLine(elementToRotate[2].transform.position, elementToRotate[2].transform.position + elementToRotate[2].transform.forward, Color.red);
     }
 
     void IdleBehaviour()
@@ -88,6 +89,7 @@ public class BossController : MonoBehaviour {
     }
 
     bool chargeCoroutine = false;
+    bool walking = true;
 
     void Phase1Behaviour()
     {
@@ -99,6 +101,11 @@ public class BossController : MonoBehaviour {
 
         if (!chargeCoroutine)
         {
+            if (walking)
+            {
+                animateur.SetTrigger("isWalking");
+                walking = false;
+            }
             Vector3 positionPlayer = player.transform.position;
             if (Vector3.Distance(transform.position, new Vector3(positionPlayer.x, transform.position.y, positionPlayer.z)) > manager.stopDistance)
             {
@@ -124,20 +131,27 @@ public class BossController : MonoBehaviour {
         Vector3 positionPlayer = player.transform.position;
         Vector3 startPosition = transform.position;
         transform.LookAt(new Vector3(positionPlayer.x, transform.position.y, positionPlayer.z));
-        
+
+        animateur.SetTrigger("isCharging");
         yield return new WaitForSeconds(1.5f);
 
         charging = true;
 
-        Ray ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
+        //Ray ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
+        Ray ray = new Ray(finder.transform.position, finder.transform.right);
+        Ray ray2 = new Ray(finder.transform.position, -finder.transform.right);
+        
         RaycastHit hit;
+        RaycastHit hit2;
 
-        bool canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
+        bool canMove = !(((Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall") || (Physics.Raycast(ray2, out hit2, 2f) && hit2.transform.gameObject.tag == "Wall")));
 
         while (canMove && charging && currentState == States.Phase1)
         {
-            ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
-            canMove = !(Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall");
+            //ray = new Ray(transform.position + Vector3.up * 2, transform.forward);
+            ray = new Ray(finder.transform.position, finder.transform.right);
+            ray2 = new Ray(finder.transform.position, -finder.transform.right);
+            canMove = !(((Physics.Raycast(ray, out hit, 2f) && hit.transform.gameObject.tag == "Wall") || (Physics.Raycast(ray2, out hit2, 2f) && hit2.transform.gameObject.tag == "Wall")));
 
             if (!canMove)
             {
@@ -162,8 +176,8 @@ public class BossController : MonoBehaviour {
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        //Debug.Log("velocity = " + GetComponent<Rigidbody>().velocity);
-
+        walking = true;
+        
     }
 
     IEnumerator ReturnCenter()
@@ -210,6 +224,7 @@ public class BossController : MonoBehaviour {
     {
         GameObject go = Instantiate(xplosion, position, Quaternion.identity) as GameObject;
         ParticleSystem ps;
+        AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[0], transform.position, 1f);
         ps = go.GetComponent<ParticleSystem>();
         ps.Play();
     }
@@ -219,6 +234,9 @@ public class BossController : MonoBehaviour {
         if (life <= 0)
         {
             Badaboum(transform.position);
+
+            UIManager.Instance.lauchWinUI();
+
             Destroy(gameObject);
         }
         else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
@@ -233,7 +251,6 @@ public class BossController : MonoBehaviour {
 
     public void SwitchState(States s)
     {
-        //Debug.Log("state  " + s);
 
         currentState = s;
         if(s!= States.Idle && s != manager.currentState)
@@ -286,20 +303,10 @@ public class BossController : MonoBehaviour {
 
         if (currentState == States.Phase3)
         {
-            //Debug.Log("laser");
             laserRear.SetActive(true);
             laserRear.GetComponent<Lazer>().Actionned();
         }
     }
-
-    /*void ChangeColor(Color c)
-    {
-        //Transform[] trans = gameObject.GetComponentsInChildren<Transform>();
-        foreach(Transform t in gameObject.transform)
-        {
-            t.GetComponent<MeshRenderer>().material.color = c;
-        }
-    }*/
 
     public States GetState()
     {
@@ -316,7 +323,6 @@ public class BossController : MonoBehaviour {
 
         if(collision.gameObject.tag == "Boss")
         {
-            //Debug.Log("kill");
         }
         if(currentState == States.Phase1)
         {
@@ -352,7 +358,6 @@ public class BossController : MonoBehaviour {
                 otherBossKilled = true;
                 charging = false;
                 chargeCoroutine = false;
-                //Debug.Log(currentState);
             }
             else if (collision.gameObject.tag == "Player" && charging)
             {

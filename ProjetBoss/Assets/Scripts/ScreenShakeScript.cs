@@ -14,12 +14,10 @@ public class ScreenShakeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.V)){shake = 1.0f;}
 		if (shake > 0) 
 		{
 			Vector3 shakeMove = Random.insideUnitSphere * shakeAmount;
 			shakeMove.y = 0.8f;
-			//Debug.Log(shakeMove);
 			this.gameObject.transform.localPosition = shakeMove;
 			shake -= Time.deltaTime * decreaseFactor;
 			

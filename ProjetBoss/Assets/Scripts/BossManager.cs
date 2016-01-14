@@ -49,7 +49,7 @@ public class BossManager : MonoBehaviour {
 
     public void BossBegining()
     {
-        SoundManager.Instance.PlaySound(gameObject, SoundManager.Instance.bossMusic, 0.5f);
+        SoundManager.Instance.PlaySound(gameObject, SoundManager.Instance.bossMusic, 0.25f);
 
         Invoke("bossWillBegining",2f);
 		

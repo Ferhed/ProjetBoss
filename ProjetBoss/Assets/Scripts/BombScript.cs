@@ -33,7 +33,6 @@ public class BombScript : MonoBehaviour {
     PlayerLife playerLife;
 
 	void Start () {
-        Debug.Log(startPos.y);
         playerLife = FindObjectOfType<PlayerLife>();
         boss = GameObject.FindGameObjectWithTag ("Boss");
 		endPos = this.gameObject.transform.position;
@@ -96,7 +95,6 @@ public class BombScript : MonoBehaviour {
 				float distShake = Mathf.Cos(Vector3.Distance(this.gameObject.transform.position,Cam.transform.position)/20);
 				if (Cam.GetComponent<ScreenShakeScript>().shakeAmount < distShake)
 				{
-					//Debug.Log(distShake/2);
 					Cam.GetComponent<ScreenShakeScript>().shakeAmount = distShake/2;
 					Cam.GetComponent<ScreenShakeScript>().shake = 0.8f;
 				}
