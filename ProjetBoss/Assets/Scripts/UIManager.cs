@@ -108,6 +108,7 @@ public class UIManager : MonoBehaviour {
 
     public void lauchWinUI()
     {
+        AudioSource.PlayClipAtPoint(SoundManager.Instance.victorySound,GameObject.FindGameObjectWithTag("Player").transform.position, 1f);
         StartCoroutine(UIWin());
     }
 

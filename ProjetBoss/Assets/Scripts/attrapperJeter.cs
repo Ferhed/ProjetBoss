@@ -68,4 +68,16 @@ public class attrapperJeter : MonoBehaviour {
 
 	}
 
+    public void looseItem()
+    {
+        if (itemLink)
+        {
+            Rigidbody rb = itemLink.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            itemLink.parent = null;
+            itemLink.localScale *= 2f;
+            itemLink = null; 
+        }
+    }
+
 }

@@ -49,11 +49,19 @@ public class BossManager : MonoBehaviour {
 
     public void BossBegining()
     {
-        SoundManager.Instance.PlaySound(gameObject, SoundManager.Instance.bossMusic, 0.25f);
+        AudioSource.PlayClipAtPoint(SoundManager.Instance.bossValentin, bosses[0].transform.position, 1f);
+        AudioSource.PlayClipAtPoint(SoundManager.Instance.bossPierre, bosses[1].transform.position, 1f);
+
+        Invoke("BeginMusic", 0.7f);
 
         Invoke("bossWillBegining",2f);
 		
 		UIManager.Instance.launchUI("Mecanix & Patafix",20);
+    }
+
+    void BeginMusic()
+    {
+        SoundManager.Instance.PlaySound(gameObject, SoundManager.Instance.bossMusic, 0.25f);
     }
 
 	void bossWillBegining()
@@ -104,6 +112,11 @@ public class BossManager : MonoBehaviour {
                 currentPhase1.GetComponent<BossController>().hasCharged = false;
             }
         }
+    }
+
+    public GameObject GetCurrentBoss()
+    {
+        return bosses[0] ? bosses[0] : bosses[1];
     }
 
     public void EndPhase1(GameObject deadBoss)

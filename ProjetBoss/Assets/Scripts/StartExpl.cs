@@ -24,6 +24,7 @@ public class StartExpl : MonoBehaviour {
         {
             fun("Wall");
             //fun("Ground");
+            fun("Props");
             Destroy(this.gameObject);
         }
 	}
