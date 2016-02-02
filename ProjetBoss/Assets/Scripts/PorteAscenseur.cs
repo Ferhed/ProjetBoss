@@ -4,7 +4,7 @@ using System.Collections;
 public class PorteAscenseur : MonoBehaviour {
 
     public GameObject porte;
-	public float tempsOuverturePorte = 10f;
+	public float tempsOuverturePorte = 5f;
 	private float currentTime;
 	private bool caSouvre = false;
     private float ratio = 1f;

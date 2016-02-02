@@ -10,12 +10,12 @@ public class Bouton : MonoBehaviour {
     bool activateLight = false;
     float timer = 0f;
 
-	public enum TYPE
+	/*public enum TYPE
 	{
 		OUVERTURE,
 	}
 
-	public TYPE monType;
+	public TYPE monType;*/
 
 	// Use this for initialization
 	void Start () {
@@ -28,20 +28,20 @@ public class Bouton : MonoBehaviour {
         {
             var height = (Mathf.Sin(Mathf.PI * timer) + 2);
             timer += Time.deltaTime;
-            light.intensity = height;
+            light.intensity = height*2;
         }
 	}
 	public void utiliserBouton()
 	{
-		if(!gameLaunch || monType == TYPE.OUVERTURE)
+		if(!gameLaunch /*|| monType == TYPE.OUVERTURE*/)
 		{
             gameLaunch = true;
             activateLight = true;
 			GameObject Cam = GameObject.FindGameObjectWithTag("MainCamera");
 			Cam.GetComponent<ScreenShakeScript>().shakeAmount = 0.005f;
-			Cam.GetComponent<ScreenShakeScript>().shake = 10f;
+			Cam.GetComponent<ScreenShakeScript>().shake = 5f;
             GetComponent<AudioSource>().Play();
-            Invoke("launchGame", 10);
+            Invoke("launchGame", 5);
 		}
 	}
 

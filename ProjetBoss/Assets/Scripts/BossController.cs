@@ -25,6 +25,8 @@ public class BossController : MonoBehaviour {
     public GameObject axeRotation;
     public GameObject[] elementToRotate;
 
+    public GameObject animTropProche;
+
     public float invincibilityDelay = 2f;
     float invincibilityStart = 0f;
     Animator animateur;
@@ -38,6 +40,7 @@ public class BossController : MonoBehaviour {
 
     private bool otherBossKilled = false;
     bool isTourbiloling = false;
+    bool tpProche = false;
 
     public Transform finder;
 
@@ -61,6 +64,9 @@ public class BossController : MonoBehaviour {
     }
     // Update is called once per frame
     void FixedUpdate () {
+
+
+
         switch (currentState)
         {
             case States.Idle:
@@ -78,6 +84,25 @@ public class BossController : MonoBehaviour {
         }
     }
 
+    void animTpProche()
+    { 
+        if(!tpProche)
+        {
+            if (Random.Range(0f, 1f) > 0.5f)
+            {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.non, transform.position, 1f);
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(SoundManager.Instance.vaten, transform.position, 1f);
+            }
+            Debug.Log("attention");
+            GameObject go = Instantiate(animTropProche, (transform.position + new Vector3(0, 0, 0.5f)), Quaternion.identity)as GameObject;
+            Destroy(go, 1f);
+            tpProche = true;
+        }
+    }
+
     void IdleBehaviour()
     {
 
@@ -85,6 +110,11 @@ public class BossController : MonoBehaviour {
         {
             Badaboum(transform.position);
             manager.EndPhase1(gameObject);
+        }
+        else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
+        {
+            animTpProche();
+            playerLife.Die();
         }
     }
 
@@ -125,6 +155,7 @@ public class BossController : MonoBehaviour {
             StartCoroutine(ChargeCoroutine());
         }
     }
+
 
     IEnumerator ChargeCoroutine()
     {
@@ -212,6 +243,7 @@ public class BossController : MonoBehaviour {
         }
         else if(Vector3.Distance(this.transform.position,player.transform.position) < minPlayerDistance)
         {
+            animTpProche();
             playerLife.Die();
         }
 
@@ -224,6 +256,7 @@ public class BossController : MonoBehaviour {
     {
         GameObject go = Instantiate(xplosion, position, Quaternion.identity) as GameObject;
         ParticleSystem ps;
+        AudioSource.PlayClipAtPoint(SoundManager.Instance.aah, transform.position, 1f);
         AudioSource.PlayClipAtPoint(SoundManager.Instance.explosionsSounds[0], transform.position, 1f);
         ps = go.GetComponent<ParticleSystem>();
         ps.Play();
@@ -241,6 +274,7 @@ public class BossController : MonoBehaviour {
         }
         else if (Vector3.Distance(this.transform.position, player.transform.position) < minPlayerDistance)
         {
+            animTpProche();
             playerLife.Die();
         }
 
@@ -341,6 +375,7 @@ public class BossController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
         {
+            AudioSource.PlayClipAtPoint(SoundManager.Instance.arg, transform.position, 1f);
             life -= 40;
             invincibilityStart = Time.time;
         }
@@ -366,7 +401,8 @@ public class BossController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Bomb" && collision.gameObject.GetComponent<BombScript>().isActivated && Time.time - invincibilityStart > invincibilityDelay)
         {
-            life = 0;
+            AudioSource.PlayClipAtPoint(SoundManager.Instance.arg, transform.position, 1f);
+            life -= 40;
             invincibilityStart = Time.time;
         }
     }
