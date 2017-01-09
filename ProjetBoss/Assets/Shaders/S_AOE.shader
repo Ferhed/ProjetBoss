@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 // Upgrade NOTE: commented out 'float4 unity_DynamicLightmapST', a built-in variable
 // Upgrade NOTE: commented out 'float4 unity_LightmapST', a built-in variable
 
@@ -93,8 +95,8 @@ Shader "Custom/AOE" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
                 o.uv0 = v.texcoord0;
-                o.normalDir = mul(_Object2World, float4(v.normal,0)).xyz;
-                o.posWorld = mul(_Object2World, v.vertex);
+                o.normalDir = mul(unity_ObjectToWorld, float4(v.normal,0)).xyz;
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
                 o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 UNITY_TRANSFER_FOG(o,o.pos);
@@ -286,8 +288,8 @@ Shader "Custom/AOE" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
                 o.uv0 = v.texcoord0;
-                o.normalDir = mul(_Object2World, float4(v.normal,0)).xyz;
-                o.posWorld = mul(_Object2World, v.vertex);
+                o.normalDir = mul(unity_ObjectToWorld, float4(v.normal,0)).xyz;
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
                 o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 o.screenPos = o.pos;
@@ -467,7 +469,7 @@ Shader "Custom/AOE" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
                 o.uv0 = v.texcoord0;
-                o.normalDir = mul(_Object2World, float4(v.normal,0)).xyz;
+                o.normalDir = mul(unity_ObjectToWorld, float4(v.normal,0)).xyz;
                 o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 o.screenPos = o.pos;
                 TRANSFER_SHADOW_COLLECTOR(o)
@@ -625,7 +627,7 @@ Shader "Custom/AOE" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
                 o.uv0 = v.texcoord0;
-                o.normalDir = mul(_Object2World, float4(v.normal,0)).xyz;
+                o.normalDir = mul(unity_ObjectToWorld, float4(v.normal,0)).xyz;
                 o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 o.screenPos = o.pos;
                 TRANSFER_SHADOW_CASTER(o)
